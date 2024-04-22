@@ -1,7 +1,8 @@
-You set sail from Astrakan. You see the blue ocean lying ahead of you.
+== Astrakan ==
+You set sail from Astrakan. You see the endless blue sea lying ahead of you.
 
- * Great weather, indeed.
- * There were four lines of content.
+ * Great weather to start the mission
+ * Not sure what this expedition will lead to...
 
 - They lived happily ever after.
     -> END
