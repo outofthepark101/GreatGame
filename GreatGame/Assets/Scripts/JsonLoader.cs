@@ -1,22 +1,32 @@
+using Newtonsoft.Json;
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
+using System.IO;
 using UnityEngine;
+
 
 public class JsonLoader : MonoBehaviour
 {
+    public TextAsset configData;
+
     [System.Serializable]
     public class CommonConfig
     {
-        public float INITIAL_SUPPLY_VALUE;
-        public float INITIAL_MONEY_VALUE;
+        public string Index;
+        public float Value;
     }
-
-    CommonConfig config = new CommonConfig();
 
     void Start()
     {
-       //config = JsonUtility.FromJson<CommonConfig>()
-
-
+        var commonConfig = JsonConvert.DeserializeObject<List<CommonConfig>>(configData.text);
+        Debug.Log(commonConfig[0].Index);
+        Debug.Log(commonConfig[0].Value);
+        Debug.Log(commonConfig[1].Index);
+        Debug.Log(commonConfig[1].Value);
     }
+
 }
+
+
