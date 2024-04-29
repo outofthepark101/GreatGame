@@ -1,3 +1,4 @@
+using Language.Lua;
 using Newtonsoft.Json;
 using System;
 using System.Collections;
@@ -10,6 +11,7 @@ using UnityEngine;
 public class JsonLoader : MonoBehaviour
 {
     public TextAsset configData;
+    public CommonConfig commonConfig;
 
     [System.Serializable]
     public class CommonConfig
@@ -20,7 +22,7 @@ public class JsonLoader : MonoBehaviour
 
     void Start()
     {
-        var commonConfig = JsonConvert.DeserializeObject<List<CommonConfig>>(configData.text);
+        List<CommonConfig> commonConfig = JsonConvert.DeserializeObject<List<CommonConfig>>(configData.text);
         Debug.Log(commonConfig[0].Index);
         Debug.Log(commonConfig[0].Value);
         Debug.Log(commonConfig[1].Index);
