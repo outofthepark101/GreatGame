@@ -5,24 +5,22 @@ using TMPro;
 
 public class JsonDisplayer : MonoBehaviour
 {
-    private TextMeshPro textMeshPro;
+    private TextMeshProUGUI textMeshPro;
     public JsonLoader jsonLoader;
 
     void Start()
     {
-        textMeshPro = gameObject.GetComponent<TextMeshPro>();
-        jsonLoader = GetComponent<JsonLoader>();
+        textMeshPro = gameObject.GetComponent<TextMeshProUGUI>();
         DisplayData();
     }
 
     public void DisplayData()
     {
-        foreach (var data in jsonLoader.commonConfig.Index)
+        for (int i = 0; i < jsonLoader.commonConfig.Count; i++)
         {
-            textMeshPro.text = data.ToString();
-            if (data.ToString() == jsonLoader.commonConfig.Index)
+            if (textMeshPro.text == jsonLoader.commonConfig[i].Index)
             {
-                textMeshPro.text = jsonLoader.commonConfig.Value.ToString();
+                textMeshPro.text = jsonLoader.commonConfig[i].Value.ToString();
             }
         }
     }
