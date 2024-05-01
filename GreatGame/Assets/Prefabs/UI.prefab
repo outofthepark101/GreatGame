@@ -349,8 +349,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   configData: {fileID: 4900000, guid: 765dbefc9fc2bb244855ca292b724073, type: 3}
   commonConfig:
-    Index: 
-    Value: 0
+    Index: INITIAL_SUPPLY_VALUE
+    Value: 100
 --- !u!1 &7425379929647947771
 GameObject:
   m_ObjectHideFlags: 0
