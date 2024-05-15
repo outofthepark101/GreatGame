@@ -115,6 +115,7 @@ GameObject:
   - component: {fileID: 11471062}
   - component: {fileID: 11424616}
   - component: {fileID: 5981261367993456933}
+  - component: {fileID: 6205533837624454645}
   m_Layer: 0
   m_Name: Dialogue Manager
   m_TagString: Untagged
@@ -332,6 +333,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inkJSONAssets:
   - {fileID: 4900000, guid: 589a8f1e2a358604488d6ddf15a6dff8, type: 3}
+  - {fileID: 4900000, guid: 223472614e19cd840b5cd1960bbcbd13, type: 3}
   resetStateOnConversationStart: 0
   actorNamesPrecedeLines: 0
   caseSensitiveActorNames: 0
@@ -344,6 +346,84 @@ MonoBehaviour:
   debug: 0
   isResuming: 0
   isPlayerSpeaking: 0
+--- !u!114 &6205533837624454645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 125852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a5473918a168c44fa0294bd4d1399f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conversationEvents:
+    onConversationStart:
+      m_PersistentCalls:
+        m_Calls: []
+    onConversationEnd:
+      m_PersistentCalls:
+        m_Calls: []
+    runOnConversationEndEventsAtEndOfFrame: 0
+    onConversationCancelled:
+      m_PersistentCalls:
+        m_Calls: []
+    onConversationLine:
+      m_PersistentCalls:
+        m_Calls: []
+    onConversationLineEnd:
+      m_PersistentCalls:
+        m_Calls: []
+    onConversationLineCancelled:
+      m_PersistentCalls:
+        m_Calls: []
+    onConversationResponseMenu:
+      m_PersistentCalls:
+        m_Calls: []
+    onConversationResponseMenuTimeout:
+      m_PersistentCalls:
+        m_Calls: []
+    onLinkedConversationStart:
+      m_PersistentCalls:
+        m_Calls: []
+  barkEvents:
+    onBarkStart:
+      m_PersistentCalls:
+        m_Calls: []
+    onBarkEnd:
+      m_PersistentCalls:
+        m_Calls: []
+    onBarkLine:
+      m_PersistentCalls:
+        m_Calls: []
+  sequenceEvents:
+    onSequenceStart:
+      m_PersistentCalls:
+        m_Calls: []
+    onSequenceEnd:
+      m_PersistentCalls:
+        m_Calls: []
+  questEvents:
+    onQuestStateChange:
+      m_PersistentCalls:
+        m_Calls: []
+    onQuestTrackingEnabled:
+      m_PersistentCalls:
+        m_Calls: []
+    onQuestTrackingDisabled:
+      m_PersistentCalls:
+        m_Calls: []
+    onUpdateQuestTracker:
+      m_PersistentCalls:
+        m_Calls: []
+  pauseEvents:
+    onDialogueSystemPause:
+      m_PersistentCalls:
+        m_Calls: []
+    onDialogueSystemUnpause:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!1 &58202373156040163
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,0 +1,31 @@
+﻿[
+{		"CityID": "1",
+		"EncounterType": "1",
+		"SupplySpendAmount": "0",
+		"CityName": "City1"
+	},
+{
+		"CityID": "2",
+		"EncounterType": "2",
+		"SupplySpendAmount": "10",
+		"CityName": "City2"
+	},
+{
+		"CityID": "3",
+		"EncounterType": "3",
+		"SupplySpendAmount": "10",
+		"CityName": "City3"
+	},
+{
+		"CityID": "4",
+		"EncounterType": "4",
+		"SupplySpendAmount": "10",
+		"CityName": "City4"
+	},
+{
+		"CityID": "5",
+		"EncounterType": "5",
+		"SupplySpendAmount": "10",
+		"CityName": "City5"
+	}
+]

@@ -4,15 +4,33 @@ using UnityEngine;
 
 public class Traveler : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public JsonLoader jsonLoader;
+    public int cityID;
+
+    //private int encounterType;
+    private float supplySpendAmount;
+    private string cityName;
+
+ 
+    public void ReadCityData()
     {
-        
+        for (int i = 0; i < jsonLoader.prologue.Count; i++)
+        {
+            if (cityID == jsonLoader.prologue[i].CityID)
+            {
+                //encounterType = jsonLoader.prologue[i].EncounterType;
+                supplySpendAmount = jsonLoader.prologue[i].SupplySpendAmount;
+                cityName = jsonLoader.prologue[i].CityName;
+            }
+        }
+        Debug.Log(supplySpendAmount);
+        Debug.Log(cityName);
     }
 
-    // Update is called once per frame
-    void Update()
+    //need to work on this
+    public void SubtractResources()
     {
-        
+        jsonLoader.commonConfig[0].Value =- supplySpendAmount;
+        Debug.Log(jsonLoader.commonConfig[0].Value);
     }
 }

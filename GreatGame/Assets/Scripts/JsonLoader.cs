@@ -11,7 +11,9 @@ using UnityEngine;
 public class JsonLoader : MonoBehaviour
 {
     public TextAsset configData;
+    public TextAsset prologueData;
     public List<CommonConfig> commonConfig;
+    public List<Prologue> prologue;
 
     [System.Serializable]
     public class CommonConfig
@@ -20,13 +22,18 @@ public class JsonLoader : MonoBehaviour
         public float Value;
     }
 
+    public class Prologue
+    {
+        public int CityID;
+        public int EncounterType;
+        public float SupplySpendAmount;
+        public string CityName;
+    }
+
     void Awake()
     {
         commonConfig = JsonConvert.DeserializeObject<List<CommonConfig>>(configData.text);
-        Debug.Log(commonConfig[0].Index);
-        Debug.Log(commonConfig[0].Value);
-        Debug.Log(commonConfig[1].Index);
-        Debug.Log(commonConfig[1].Value);
+        prologue = JsonConvert.DeserializeObject<List<Prologue>>(prologueData.text);
     }
 
 }
