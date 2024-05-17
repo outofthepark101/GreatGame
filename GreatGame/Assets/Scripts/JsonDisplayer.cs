@@ -5,12 +5,14 @@ using TMPro;
 
 public class JsonDisplayer : MonoBehaviour
 {
-    private TextMeshProUGUI textMeshPro;
-    public JsonLoader jsonLoader;
+    public TextMeshProUGUI[] textMeshPro;
+    public Traveler[] traveler;
+
+    private JsonLoader jsonLoader;
 
     void Start()
     {
-        textMeshPro = gameObject.GetComponent<TextMeshProUGUI>();
+        jsonLoader = GetComponent<JsonLoader>();
         DisplayData();
     }
 
@@ -18,10 +20,26 @@ public class JsonDisplayer : MonoBehaviour
     {
         for (int i = 0; i < jsonLoader.commonConfig.Count; i++)
         {
-            if (textMeshPro.text == jsonLoader.commonConfig[i].Index)
+            if (textMeshPro[i].text == jsonLoader.commonConfig[i].Index)
             {
-                textMeshPro.text = jsonLoader.commonConfig[i].Value.ToString();
+                textMeshPro[i].text = jsonLoader.commonConfig[i].Value.ToString();
             }
         }
+    }
+
+    public void DisplayUpdatedData()
+    {
+        for (int i = 0; i < traveler.Length; i++)
+        {
+            if (traveler[i].supplySpendAmount > 0)
+            {
+                textMeshPro[0].text = traveler[i].newSupplyAmount.ToString();
+            }
+            else if (traveler[i].moneySpendAmount > 0)
+            {
+                textMeshPro[1].text = traveler[i].newMoneyAmount.ToString();
+            }
+        }
+        // need to find out how to display updated data on UI
     }
 }

@@ -1,4 +1,5 @@
 EXTERNAL Sequence(x)
+
 == Astrakan ==
 You set sail from Astrakan. You see the endless blue sea lying ahead of you.
 
@@ -7,3 +8,5 @@ You set sail from Astrakan. You see the endless blue sea lying ahead of you.
 
 - They lived happily ever after.
     -> END
+== function Sequence(x) ==
+~ return 1

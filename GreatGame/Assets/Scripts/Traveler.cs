@@ -7,11 +7,12 @@ public class Traveler : MonoBehaviour
     public JsonLoader jsonLoader;
     public int cityID;
 
+    [HideInInspector]
     //private int encounterType;
-    private float supplySpendAmount;
-    private string cityName;
+    public float newSupplyAmount, supplySpendAmount, newMoneyAmount, moneySpendAmount;
+    [HideInInspector]
+    public string cityName;
 
- 
     public void ReadCityData()
     {
         for (int i = 0; i < jsonLoader.prologue.Count; i++)
@@ -23,14 +24,19 @@ public class Traveler : MonoBehaviour
                 cityName = jsonLoader.prologue[i].CityName;
             }
         }
-        Debug.Log(supplySpendAmount);
-        Debug.Log(cityName);
     }
 
-    //need to work on this
     public void SubtractResources()
     {
-        jsonLoader.commonConfig[0].Value =- supplySpendAmount;
-        Debug.Log(jsonLoader.commonConfig[0].Value);
+        if (supplySpendAmount > 0)
+        {
+            newSupplyAmount = jsonLoader.commonConfig[0].Value;
+            newSupplyAmount -= supplySpendAmount;
+        }
+        else if (moneySpendAmount > 0)
+        {
+            newMoneyAmount = jsonLoader.commonConfig[1].Value;
+            newMoneyAmount -= moneySpendAmount;
+        }
     }
 }
