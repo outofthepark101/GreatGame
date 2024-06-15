@@ -1956,6 +1956,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 58202373156040163, guid: 58ac37417e60e534f91138088a3e6f70, type: 3}
+      propertyPath: m_Name
+      value: PCResponsePanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 4604910513285884283, guid: 58ac37417e60e534f91138088a3e6f70, type: 3}
+      propertyPath: m_Name
+      value: NPCTextPanel
+      objectReference: {fileID: 0}
     - target: {fileID: 7154664183009921265, guid: 58ac37417e60e534f91138088a3e6f70, type: 3}
       propertyPath: m_Enabled
       value: 1
