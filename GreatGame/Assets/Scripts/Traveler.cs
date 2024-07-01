@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Traveler : MonoBehaviour
 {
@@ -38,5 +39,11 @@ public class Traveler : MonoBehaviour
             newMoneyAmount = jsonLoader.commonConfig[1].Value;
             newMoneyAmount -= moneySpendAmount;
         }
+    }
+
+    public void ActivateCity()
+    {
+        Button buttonComponent = gameObject.GetComponent<Button>();
+        buttonComponent.enabled = true;
     }
 }
