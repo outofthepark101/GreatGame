@@ -9,9 +9,25 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play The Great Game: Prologue.</tw-noscript></noscript></tw-story>
-<tw-storydata name="The Great Game: Prologue" startnode="67" creator="Twine" creator-version="2.10.0" format="Harlowe" format-version="3.3.9" ifid="C9566DBB-10C8-4058-AAB5-322FE342567B" options="" tags="" zoom="0.6" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">.Map {
+<tw-storydata name="The Great Game: Prologue" startnode="67" creator="Twine" creator-version="2.10.0" format="Harlowe" format-version="3.3.9" ifid="C9566DBB-10C8-4058-AAB5-322FE342567B" options="" tags="" zoom="0.6" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">html, body {
+  overflow: hidden;
+}
+
+tw-link:hover, .enchantment-link:hover {
+  color: red;
+}
+
+tw-link, .enchantment-link{
+  color: black;
+}
+
+.Map {
   position: center;
   width: 100%;
+}
+
+tw-dialog tw-link {
+  color: white;
 }
 
 tw-dialog { 
@@ -19,6 +35,7 @@ tw-dialog {
   max-width: 70%;
   max-height: 100%;
 }
+
 tw-sidebar {
   position: fixed;
   top: 8%;
@@ -26,11 +43,12 @@ tw-sidebar {
   width: 20%;	/* padding-right of the tw-story element. */
   max-height: 100%;
   margin-top: 0%;	/* padding-top of the tw-story element. */
-  padding: 0em 0em 0em 2.5em;
+  padding: 0em 0em 0em 4em;
   text-align: left;
   background-image: url("Images/ResourcesUI.png");
   background-size: 100% 100%;
   background-repeat: no-repeat;
+  background-color: white;
 }
 
 tw-icon {
@@ -40,7 +58,7 @@ tw-icon {
 
 @font-face {
   font-family: main-font;
-  src: url("Fonts/Signature.otf")
+  src: url("Fonts/Quintessential-Regular.ttf");
 }
 
 tw-icon[alt="Undo"], tw-icon[alt="Redo"] {
@@ -50,18 +68,23 @@ tw-icon[alt="Undo"], tw-icon[alt="Redo"] {
 tw-story {
   color: black;
   font-family: main-font;
-  font-size: 4.5vh;
-  font-size: 4.5vw;
-  font-size: 4.5vmin;
+  font-size: 2.75vh;
+  font-size: 2.75vw;
+  font-size: 2.75vmin;
   line-height: normal;
   display: "UI";
 }
 
 #TextBox {
-  background-position: 50% 50%;
-  background-image: url("Images/TextUI1.png");
-  background-size: 67% 115%;
+  width: 900px; /* Set the width of the textbox */
+  height: 850px; /* Set the height of the textbox */
+  margin: 0 auto;
+  top: -3em;
+  left: 2em;
+  background-image: url("Images/TextUI2.png");
+  background-size: contain;
   background-repeat: no-repeat;
+  
 }
 
 tw-story[tags~="MainMenu"]{
@@ -72,7 +95,7 @@ tw-story[tags~="MainMenu"]{
 tw-story[tags~="Intro"]{
   color: white;
   background-image: none;
-  font-family: arial;
+  font-family: Times New Roman;
   font-size: 4vh;
   font-size: 4vw;
   font-size: 4vmin;
@@ -189,7 +212,9 @@ tw-story[tags~="BritishOffice"]{
   background-repeat: no-repeat;
   background-size: 100vw 100vh;
   line-height: normal;
-}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="MainMenu" color="blue"></tw-tag><tw-passagedata pid="1" name="Start" tags="Intro" position="825,150" size="100,100">(align:&quot;=&gt;&lt;=&quot;)+(box:&quot;=XXXXXXXX=&quot;)[
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript">window.clearSavedGames = function() {
+    localStorage.clear();
+};</script><tw-tag name="MainMenu" color="blue"></tw-tag><tw-passagedata pid="1" name="Start" tags="Intro" position="825,150" size="100,100">(align:&quot;=&gt;&lt;=&quot;)+(box:&quot;=XXXXXXXX=&quot;)[
 (transition: &quot;dissolve&quot;)+(transition-delay: 2s)+(transition-time: 2s)[The year is 1825.] 
 (transition: &quot;dissolve&quot;)+(transition-delay: 5s)+(transition-time: 2s)[The two most powerful nations on Earth, Victorian Britain and Tsarist Russia, are fighting a secret war in the great deserts of Central Asia.]
 (transition: &quot;dissolve&quot;)+(transition-delay: 12s)+(transition-time: 2s)[The young officers, both British and Russian, are risking their lives for their nations&#39; cause.]
@@ -198,36 +223,42 @@ tw-story[tags~="BritishOffice"]{
 {(after: 15s)[(click: ?Start)[(goto: &quot;CharacterIntroduction&quot;)]]}
 
 &lt;!--(transition: &quot;dissolve&quot;)+(transition-delay: 20s)+(transition-time: 2s)[In this dangerous game, hostile Turcomans and treacherous Khans will get in your ways of completing the missions.]
-(transition: &quot;dissolve&quot;)+(transition-delay: 27s)+(transition-time: 2s)[Whether you return successfully from this journey or not is up to you. ]--&gt;</tw-passagedata><tw-passagedata pid="2" name="Begin your mission" tags="Astrakan" position="825,375" size="100,100">(transition: &quot;dissolve&quot;)+(transition-delay: $EncounterFadeInTime)+(transition-time: $EncounterFadeInTime)[&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[The port of Astrakhan hums with activity under a brilliant blue sky. The sea stretches endlessly, its surface sparkling in the sunlight and reflecting the energy of the bustling harbor. Merchant and military vessels come and go, their decks brimming with goods and lively crews.
+(transition: &quot;dissolve&quot;)+(transition-delay: 27s)+(transition-time: 2s)[Whether you return successfully from this journey or not is up to you. ]--&gt;</tw-passagedata><tw-passagedata pid="2" name="Begin your mission" tags="Astrakan" position="825,375" size="100,100">(transition: &quot;dissolve&quot;)+(transition-delay: $EncounterFadeInTime)+(transition-time: $EncounterFadeInTime)[&lt;div id=&quot;TextBox&quot;&gt;(align:&quot;&lt;==&quot;)+(box: $BoxWidth)[
+The port of Astrakhan hums with activity under a brilliant blue sky. The sea stretches endlessly, its surface sparkling in the sunlight and reflecting the energy of the bustling harbor. Merchant and military vessels come and go, their decks brimming with goods and lively crews.
 
 As you walk through the crowded port, your gaze falls on a group of British merchants unloading their cargo. The sight amuses you—they work so diligently, blissfully unaware of your intent to undermine their empire.
 
 The weight of your mission tugs at your thoughts. You reach into your coat and pull out the Imperial Order, the seal of Tsar Nicholas I gleaming in the sunlight.
 
-[[Read the order]]]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="3" name="Read the order" tags="Astrakan" position="825,500" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[Prince Aleksei Bekovski unfolds the letter. His eyes scan the crisp, formal lines of the Imperial decree, its tone cold and commanding:
+[[Read the order]]]
+
+
+
+
+
+
+
+]
+</tw-passagedata><tw-passagedata pid="3" name="Read the order" tags="Astrakan" position="825,500" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
+(align:&quot;&lt;==&quot;)+(box: $BoxWidth)[Prince Aleksei Bekovski unfolds the letter. His eyes scan the crisp, formal lines of the Imperial decree, its tone cold and commanding:
 
 “This is an Imperial decree to be executed by Prince Aleksei Bekovski. Your mission is to travel to Khiva, extend an offer of alliance to the Khan of Khiva, and bring the region under the fold of the Empire. Khiva holds strategic importance for securing access to the British Indian markets, a vital objective for our great nation. Failure is not an option. Bring glory to the Motherland.”
 
-[[Put the order back into your pocket.]]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="4" name="Salute back" tags="Astrakan" position="675,750" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[Frankenburg lowers his salute and shifts to a stance of ease. With steady and firm voice, he replies, &quot;Just doing my duty, Your Highness.&quot; Yet, as you study his face, a flicker of unease betrays him. Beneath the surface of his practiced composure, you detect the faint shadow of fear and uncertainty.
+[[Put the order back into your pocket.]]]</tw-passagedata><tw-passagedata pid="4" name="Salute back" tags="Astrakan" position="675,750" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[Frankenburg lowers his salute and shifts to a stance of ease. With steady and firm voice, he replies, &quot;Just doing my duty, Your Highness.&quot; Yet, as you study his face, a flicker of unease betrays him. Beneath the surface of his practiced composure, you detect the faint shadow of fear and uncertainty.
 
 [[&quot;You seem concerned.&quot;]]
 [[&quot;Do not show fear here, major.&quot;]]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="5" name="&quot;That took longer than I expected.&quot;" tags="Astrakan" position="975,750" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[Still holding his salute, Frankenburg speaks with measured resolve, &quot;Forgive me, Your Highness. I take full responsibility for my lateness.&quot; His tone is firm, but as you scrutinize him, a subtle uneasiness seeps through. Beneath the surface of his words lies something unspoken—perhaps fear, perhaps uncertainty.
+</tw-passagedata><tw-passagedata pid="5" name="&quot;That took longer than I expected.&quot;" tags="Astrakan" position="975,750" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[Still holding his salute, Frankenburg speaks with measured resolve, &quot;Forgive me, Your Highness. I take full responsibility for my lateness.&quot; His tone is firm, but as you scrutinize him, a subtle uneasiness seeps through. Beneath the surface of his words lies something unspoken—perhaps fear, perhaps uncertainty.
 
 [[Salute back. &quot;You seem concerned.&quot;]]
 [[Salute back. &quot;Do not show fear here, major.&quot;]]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="6" name="&quot;You seem concerned.&quot;" tags="Astrakan" position="575,925" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[After a brief moment of hesitation, Major Frankenburg begins to speak, his voice measured but resolute. &quot;With your permission, Your Highness, I must express my doubts about this mission. I’m not convinced it will bring glory to our motherland. The British East India Company commands an unyielding monopoly over Indian trade—they won’t falter simply because we claim a puny city like Khiva. If we truly wish to challenge them, we should send an army to their doorstep!&quot;
+</tw-passagedata><tw-passagedata pid="6" name="&quot;You seem concerned.&quot;" tags="Astrakan" position="575,925" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[After a brief moment of hesitation, Major Frankenburg begins to speak, his voice measured but resolute. &quot;With your permission, Your Highness, I must express my doubts about this mission. I’m not convinced it will bring glory to our motherland. The British East India Company commands an unyielding monopoly over Indian trade—they won’t falter simply because we claim a puny city like Khiva. If we truly wish to challenge them, we should send an army to their doorstep!&quot;
 
 |GT&gt;[(Persuade) &quot;Khiva is valuable for supplying our army. Without it, our army will suffer attrition before reaching India.&quot;]
 |LT&gt;[(Threaten) &quot;We are soldiers of the Imperium. You don&#39;t question Tsar&#39;s order or mine.&quot;]]
-&lt;/div&gt;
 {
 (click: ?LT)[
 	(set: $TrustPoint to it - 1)
@@ -239,10 +270,8 @@ The weight of your mission tugs at your thoughts. You reach into your coat and p
     (dialog: [This will be remembered.], &quot;I see...&quot;)
     (goto: &#39;(Persuade) &quot;Khiva is valuable for supplying our army. Without it, our army will suffer attrition before reaching India.&quot;&#39;)
 ]
-}
-&lt;!--*selecting first one will grant 1 trust point--&gt;
-&lt;!--*selecting second one will grant -1 trust point--&gt;</tw-passagedata><tw-passagedata pid="7" name="(Persuade) &quot;Khiva is valuable for supplying our army. Without it, our army will suffer attrition before reaching India.&quot;" tags="Astrakan" position="650,1075" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[&quot;I see... That does make sense,&quot; Frankenburg concedes, his tone softer now. &quot;Forgive me for showing weakness, Your Highness. I’ve been consumed by thoughts of the dangers ahead—savage Turcomans, the relentless desert heat, sandstorms, thirst... Perhaps my fear of death drove me to seek excuses.&quot;
+}</tw-passagedata><tw-passagedata pid="7" name="(Persuade) &quot;Khiva is valuable for supplying our army. Without it, our army will suffer attrition before reaching India.&quot;" tags="Astrakan" position="650,1075" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[&quot;I see... That does make sense,&quot; Frankenburg concedes, his tone softer now. &quot;Forgive me for showing weakness, Your Highness. I’ve been consumed by thoughts of the dangers ahead—savage Turcomans, the relentless desert heat, sandstorms, thirst... Perhaps my fear of death drove me to seek excuses.&quot;
 
 With those words, he turns and heads toward the ship. You follow his steps with your gaze, then look up at your flagship, the Imperator Aleksandr. Its 110-gun armament and sturdy oak hull stand as a testament to Russian naval might—an impervious juggernaut ready to carry you into the unknown.
 
@@ -251,7 +280,7 @@ With those words, he turns and heads toward the ship. You follow his steps with 
 {
 (click: ?EndEncounter)[(goto: &quot;TravelScreen1&quot;)]
 }</tw-passagedata><tw-passagedata pid="8" name="(Optimistic) &quot;This is defintely not an easy one. That is why our Tsar is sending us.&quot;" tags="Astrakan" position="825,1075" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[&quot;Yes... I just hope that I can finally go back home.&quot; Frankenburg concedes, his tone softer now. &quot;Forgive me for showing weakness, Your Highness. I’ve been consumed by thoughts of the dangers ahead—savage Turcomans, the relentless desert heat, sandstorms, thirst... Perhaps my fear of death drove me to seek excuses.&quot;
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[&quot;Yes... I just hope that I can finally go back home.&quot; Frankenburg concedes, his tone softer now. &quot;Forgive me for showing weakness, Your Highness. I’ve been consumed by thoughts of the dangers ahead—savage Turcomans, the relentless desert heat, sandstorms, thirst... Perhaps my fear of death drove me to seek excuses.&quot;
 
 With those words, he turns and heads toward the ship. You follow his steps with your gaze, then look up at your flagship, the Imperator Aleksandr. Its 110-gun armament and sturdy oak hull stand as a testament to Russian naval might—an impervious juggernaut ready to carry you into the unknown.
 
@@ -260,14 +289,14 @@ With those words, he turns and heads toward the ship. You follow his steps with 
 {
 (click: ?EndEncounter)[(goto: &quot;TravelScreen1&quot;)]
 }</tw-passagedata><tw-passagedata pid="9" name="Board the ship. Set sail for Krasnovodsk" tags="Krasnovodsk" position="1475,100" size="100,100">(transition: &quot;dissolve&quot;)+(transition-delay: $EncounterFadeInTime)+(transition-time: $EncounterFadeInTime)[&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[The port of Krasnovodsk feels familiar, not so different from Astrakhan.. This city is the last touch of civilization you will experience before venturing into the unyielding expanse of the Karakum Desert. You press forward, heading toward the outskirts.
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[The port of Krasnovodsk feels familiar, not so different from Astrakhan. This city is the last touch of civilization you will experience before venturing into the unyielding expanse of the Karakum Desert. You press forward, heading toward the outskirts.
 
 As you walk through the dusty streets, a Turcoman woman in her mid-forties catches your eye. She sits slumped against a wall, her weariness etched deeply into her face. When she notices you, she struggles to her knees and crawls toward your feet, her hands trembling as she desperately rubs them together. Her words are foreign, but her intent is unmistakable—she is begging for coins, her plea steeped in desperation.
 
 [[Take out some coins from your pocket.]]
 [[Ignore her and move on.]]]]
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="10" name="Salute back. &quot;You seem concerned.&quot;" tags="Astrakan" position="900,925" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[After a brief moment of hesitation, Major Frankenburg begins to speak, his voice measured but resolute. &quot;With your permission, Your Highness, I must express my doubts about this mission. I’m not convinced it will bring glory to our motherland. The British East India Company commands an unyielding monopoly over Indian trade—they won’t falter simply because we claim a puny city like Khiva. If we truly wish to challenge them, we should send an army to their doorstep!&quot;
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[After a brief moment of hesitation, Major Frankenburg begins to speak, his voice measured but resolute. &quot;With your permission, Your Highness, I must express my doubts about this mission. I’m not convinced it will bring glory to our motherland. The British East India Company commands an unyielding monopoly over Indian trade—they won’t falter simply because we claim a puny city like Khiva. If we truly wish to challenge them, we should send an army to their doorstep!&quot;
 
 |GT&gt;[(Persuade) &quot;Khiva is valuable for supplying our army. Without it, our army will suffer attrition before reaching India.&quot;]
 |LT&gt;[(Threaten) &quot;We are soldiers of the Imperium. You don&#39;t question Tsar&#39;s order or mine.&quot;]]
@@ -284,7 +313,7 @@ As you walk through the dusty streets, a Turcoman woman in her mid-forties catch
     (goto: &#39;(Persuade) &quot;Khiva is valuable for supplying our army. Without it, our army will suffer attrition before reaching India.&quot;&#39;)
 ]
 }</tw-passagedata><tw-passagedata pid="11" name="Salute back. &quot;Do not show fear here, major.&quot;" tags="Astrakan" position="1100,925" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[&quot;Yes, Your Highness... We cannot afford to show weakness before our enemies.&quot; Frankenburg straightens his posture, doing his best to mask any trace of unease. After a moment, he continues, his tone cautious yet firm. &quot;That said, I am not convinced this mission will bring glory to our motherland. The British East India Company holds an unshakable monopoly over Indian trade. Taking a puny city like Khiva won’t make them waver. If we truly want to strike a decisive blow, we should send an army straight to their doorstep!&quot;
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[&quot;Yes, Your Highness... We cannot afford to show weakness before our enemies.&quot; Frankenburg straightens his posture, doing his best to mask any trace of unease. After a moment, he continues, his tone cautious yet firm. &quot;That said, I am not convinced this mission will bring glory to our motherland. The British East India Company holds an unshakable monopoly over Indian trade. Taking a puny city like Khiva won’t make them waver. If we truly want to strike a decisive blow, we should send an army straight to their doorstep!&quot;
 
 |GT&gt;[(Optimistic) &quot;This is defintely not an easy one. That is why our Tsar is sending us.&quot;]
 |LT&gt;[(Threaten) &quot;We are soldiers of the Imperium. You don&#39;t question Tsar&#39;s order or mine.&quot;]]
@@ -301,7 +330,7 @@ As you walk through the dusty streets, a Turcoman woman in her mid-forties catch
     (goto: &#39;(Optimistic) &quot;This is defintely not an easy one. That is why our Tsar is sending us.&quot;&#39;)
 ]
 }</tw-passagedata><tw-passagedata pid="12" name="&quot;Do not show fear here, major.&quot;" tags="Astrakan" position="750,925" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[&quot;Yes, Your Highness... We cannot afford to show weakness before our enemies.&quot; Frankenburg straightens his posture, doing his best to mask any trace of unease. After a moment, he continues, his tone cautious yet firm. &quot;That said, I am not convinced this mission will bring glory to our motherland. The British East India Company holds an unshakable monopoly over Indian trade. Taking a puny city like Khiva won’t make them waver. If we truly want to strike a decisive blow, we should send an army straight to their doorstep!&quot;
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[&quot;Yes, Your Highness... We cannot afford to show weakness before our enemies.&quot; Frankenburg straightens his posture, doing his best to mask any trace of unease. After a moment, he continues, his tone cautious yet firm. &quot;That said, I am not convinced this mission will bring glory to our motherland. The British East India Company holds an unshakable monopoly over Indian trade. Taking a puny city like Khiva won’t make them waver. If we truly want to strike a decisive blow, we should send an army straight to their doorstep!&quot;
 
 |GT&gt;[(Optimistic) &quot;This is defintely not an easy one. That is why our Tsar is sending us.&quot;]
 |LT&gt;[(Threaten) &quot;We are soldiers of the Imperium. You don&#39;t question Tsar&#39;s order or mine.&quot;]]
@@ -318,13 +347,13 @@ As you walk through the dusty streets, a Turcoman woman in her mid-forties catch
     (goto: &#39;(Optimistic) &quot;This is defintely not an easy one. That is why our Tsar is sending us.&quot;&#39;)
 ]
 }</tw-passagedata><tw-passagedata pid="13" name="Give coins to the stranger." tags="Krasnovodsk" position="1275,375" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[You hesitate for a moment, but as a proud nobleman, you feel it is your duty to help those in need. With a sense of resolve, you offer her some coins. Without warning, she lunges at you, snatching the coins with a speed that belies her feeble appearance. In an instant, she spins on her heel and disappears into the alley.
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[You hesitate for a moment, but as a proud nobleman, you feel it is your duty to help those in need. With a sense of resolve, you offer her some coins. Without warning, she lunges at you, snatching the coins with a speed that belies her feeble appearance. In an instant, she spins on her heel and disappears into the alley.
 
-The British merchant doubles over with laughter. He lets out a hearty chuckle, savoring the moment. Adding insult to injury, he turns to you with a mocking smile. &quot;I told you so, YOUR HIGHNESS.&quot; With a dismissive shrug, he spins on his hell and strolls away, leaving you to stew in the humiliation.
+The British merchant doubles over with laughter. He lets out a hearty chuckle, savoring the moment. Adding insult to injury, he turns to you with a mocking smile. &quot;I told you so, (text-style: &quot;rumble&quot;)[YOUR HIGHNESS].&quot; With a dismissive shrug, he spins on his hell and strolls away, leaving you to stew in the humiliation.
 
 [[&quot;Not very fortunate for us.&quot;]]]
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="14" name="Take out some coins from your pocket." tags="Krasnovodsk" position="1375,225" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[As you reach for your coins, a British merchant’s voice cuts through the air. &quot;Oi! Mate! Don’t give that to her! She’ll just run off with it!&quot;
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[As you reach for your coins, a British merchant’s voice cuts through the air. &quot;Oi! Mate! Don’t give that to her! She’ll just run off with it!&quot;
 
 Before he can get any closer, Frankenburg steps between you and the merchant, his posture stiff with authority. &quot;Do not approach any further, Englishman,&quot; he says coldly.
 
@@ -339,7 +368,7 @@ The merchant stops, raising his hands in mock surrender. He scoffs, a smirk curl
 (goto: &quot;Give coins to the stranger.&quot;)
 ]
 }</tw-passagedata><tw-passagedata pid="15" name="Ignore her and move on." tags="Krasnovodsk" position="1600,225" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[She wouldn’t be here begging if she were a hard worker. The habit of the lowborn to depend on others for survival has always filled you with disdain. Without a second thought, you return your coins to your pocket, leaving the woman kneeling in the dust.
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[She wouldn’t be here begging if she were a hard worker. The habit of the lowborn to depend on others for survival has always filled you with disdain. Without a second thought, you return your coins to your pocket, leaving the woman kneeling in the dust.
 
 &quot;Your Highness, we don’t have time to waste,&quot; Frankenburg says firmly. &quot;The Tsar is no patient man. We must proceed to the desert.&quot; You nod, and together you make your way toward the city gate. The bustling streets grow quieter with every step, the crowd thinning until only a few stragglers remain.
 
@@ -355,7 +384,7 @@ Khiva waits, 500 miles away.
     (goto: &quot;TravelScreen2&quot;)
     ]
 }</tw-passagedata><tw-passagedata pid="16" name="Don&#39;t give coins to the stranger." tags="Krasnovodsk" position="1450,375" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[The merchant may be right. You recall an intelligence report you’ve read, warning of the deceitful nature of the locals. With a reluctant sigh, you slide your coins back into your pocket, leaving the woman kneeling in her sorrow.
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[The merchant may be right. You recall an intelligence report you’ve read, warning of the deceitful nature of the locals. With a reluctant sigh, you slide your coins back into your pocket, leaving the woman kneeling in her sorrow.
 
 &quot;Your Highness, we don’t have time to waste,&quot; Frankenburg says firmly. &quot;The Tsar is no patient man. We must proceed to the desert.&quot; You nod, and together you make your way toward the city gate. The bustling streets grow quieter with every step, the crowd thinning until only a few stragglers remain.
 
@@ -369,7 +398,7 @@ Then, as you approach the gate, the might of the desert strikes you. A sudden gu
     (goto: &quot;TravelScreen2&quot;)
     ]
 }</tw-passagedata><tw-passagedata pid="17" name="&quot;Not very fortunate for us.&quot;" tags="Krasnovodsk" position="1275,500" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[&quot;Your Highness, we don’t have time to waste,&quot; Frankenburg says firmly. &quot;The Tsar is no patient man. We must proceed to the desert.&quot; You nod, and together you make your way toward the city gate. The bustling streets grow quieter with every step, the crowd thinning until only a few stragglers remain.
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[&quot;Your Highness, we don’t have time to waste,&quot; Frankenburg says firmly. &quot;The Tsar is no patient man. We must proceed to the desert.&quot; You nod, and together you make your way toward the city gate. The bustling streets grow quieter with every step, the crowd thinning until only a few stragglers remain.
 
 Then, as you approach the gate, the might of the desert strikes you. A sudden gust of sand-laden wind hits your face, carrying with it the searing heat of the Karakum. Beyond the gates lies a vast, unforgiving expanse—the sea of sand stretching endlessly to the horizon.
 
@@ -381,33 +410,33 @@ Then, as you approach the gate, the might of the desert strikes you. A sudden gu
     (goto: &quot;TravelScreen2&quot;)
 ]
 }</tw-passagedata><tw-passagedata pid="18" name="Enter the desert" tags="FirstContact" position="2000,100" size="100,100">(transition: &quot;dissolve&quot;)+(transition-delay: $EncounterFadeInTime)+(transition-time: $EncounterFadeInTime)[&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[With each step, your feet sink into the dry, shifting sands, the grains creeping steadily into your boots. The desert stretches endlessly ahead, its monotony broken only by a distant column of silhouettes marching across the horizon. You squint, trying to make out details. Men wearing turbans and leading camels come into focus.
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[With each step, your feet sink into the dry, shifting sands, the grains creeping steadily into your boots. The desert stretches endlessly ahead, its monotony broken only by a distant column of silhouettes marching across the horizon. You squint, trying to make out details. Men wearing turbans and leading camels come into focus.
 
 Major Frankenburg suddenly grabs your shoulder, halting you mid-step. &quot;Turcomans…!&quot; he hisses, his voice low but urgent. &quot;Be ready, Your Highness. They might be armed.&quot; The tension in the air thickens as you steady yourself, eyes fixed on the approaching figures, prepared for whatever may come.
 
 [[&quot;Do you see any weapons?]]
 [[&quot;Let&#39;s show them what we got.&quot; (Draw your pistol)]]]]
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="19" name="&quot;Do you see any weapons?" tags="FirstContact" position="1850,250" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[&quot;They’re too far away to tell, Your Highness,&quot; Frankenburg replies cautiously. &quot;But it’s best to stay on guard.&quot;
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[&quot;They’re too far away to tell, Your Highness,&quot; Frankenburg replies cautiously. &quot;But it’s best to stay on guard.&quot;
 
 You narrow your eyes, straining to discern any details. The distance makes it impossible to tell if they’re armed, but their movements catch your attention. One of the figures appears to be gesturing animatedly. He points directly in your direction while speaking to the man beside him. The second man shrugs, his posture less certain. From their body language, it seems they’re arguing about something—or someone.
 
 [[&quot;Let&#39;s show them what we got.&quot; (Draw your pistol)]]]
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="20" name="&quot;Let&#39;s show them what we got.&quot; (Draw your pistol)" tags="FirstContact" position="2125,250" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[You draw your flintlock pistol, its weight familiar and reassuring in your hand. Frankenburg follows suit, his own weapon glinting faintly in the desert sun. The imperial insignia etched into the metal strangely bolsters your confidence, a symbol of power and authority. Yet, you keep the pistol lowered, unwilling to provoke the figures in the distance by giving them a reason to attack.
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[You draw your flintlock pistol, its weight familiar and reassuring in your hand. Frankenburg follows suit, his own weapon glinting faintly in the desert sun. The imperial insignia etched into the metal strangely bolsters your confidence, a symbol of power and authority. Yet, you keep the pistol lowered, unwilling to provoke the figures in the distance by giving them a reason to attack.
 
 Your eyes remain fixed on the group. The argument among them seems to escalate. More men gather, their voices carrying faintly on the dry wind. They push and jostle each other, the tension within their ranks palpable even from afar.
 
 [[&quot;What are they doing?&quot;]]
 [[Fire your pistol in the air.]]]
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="21" name="&quot;What are they doing?&quot;" tags="FirstContact" position="2050,425" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[&quot;I’m... not sure, Your Highness. But I can see others. They’re smaller...&quot; Frankenburg squints, leaning forward as if willing his eyes to pierce the shimmering heat. His expression suddenly shifts, the color draining from his face. &quot;Wait... Are they...? No... it can’t be...&quot; His voice trails off, choked with unease.
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[&quot;I’m... not sure, Your Highness. But I can see others. They’re smaller...&quot; Frankenburg squints, leaning forward as if willing his eyes to pierce the shimmering heat. His expression suddenly shifts, the color draining from his face. &quot;Wait... Are they...? No... it can’t be...&quot; His voice trails off, choked with unease.
 
 You can&#39;t wait this stalemate any longer. You decide to end this.
 
 [[Fire your pistol in the air.]]]
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="22" name="Fire your pistol in the air." tags="FirstContact" position="2125,575" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[A deafening crack of gunpowder shatters the air, echoing across the barren landscape. Your sudden action leaves Frankenburg momentarily frozen, his shock evident as he processes your audacity. Without missing a beat, you retrieve a bullet and gunpowder from your pouch, reloading your pistol with practiced precision.
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[A deafening crack of gunpowder shatters the air, echoing across the barren landscape. Your sudden action leaves Frankenburg momentarily frozen, his shock evident as he processes your audacity. Without missing a beat, you retrieve a bullet and gunpowder from your pouch, reloading your pistol with practiced precision.
 
 Moments later, the Turcomans begin to scatter, their movements deliberate as they retreat in an orderly march. The tension eases, and you exhale a long breath of relief.
 
@@ -418,7 +447,7 @@ As you step away from the scene, your attention shifts to Major Frankenburg. He 
 
 
 </tw-passagedata><tw-passagedata pid="23" name="&quot;Major! You coming?&quot;" tags="FirstContact" position="2125,725" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[Frankenburg turns to you, his face a mixture of disgust and fear. &quot;Your Highness... they were carrying slaves. Men, women... even children. I could see the shackles, from their necks to their feet.&quot;
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[Frankenburg turns to you, his face a mixture of disgust and fear. &quot;Your Highness... they were carrying slaves. Men, women... even children. I could see the shackles, from their necks to their feet.&quot;
 
 A sudden, chilling realization grips you. These Turcomans are merciless savages, plundering and enslaving even Christians to satisfy their greed. If captured, failing the mission would be the least of your worries. Your very life hangs precariously in the balance.
 
@@ -430,7 +459,7 @@ A sudden, chilling realization grips you. These Turcomans are merciless savages,
     (goto: &quot;TravelScreen3&quot;)
     ]
 }</tw-passagedata><tw-passagedata pid="24" name="Continue on..." tags="ThirstyTurk" position="2650,100" size="100,100">(transition: &quot;dissolve&quot;)+(transition-delay: $EncounterFadeInTime)+(transition-time: $EncounterFadeInTime)[&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[You and Major Frankenburg resume your march, but the haunting image of the enslaved still lingers in your mind. A dark thought flickers: you just hope you don’t share their fate.
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[You and Major Frankenburg resume your march, but the haunting image of the enslaved still lingers in your mind. A dark thought flickers: you just hope you don’t share their fate.
 
 The desert remains unyielding, its brutality intensifying with every step. The relentless sun scorches your face, and the oppressive heat blurs the horizon with a shimmering haze.
 
@@ -439,7 +468,7 @@ Through the distortion, a small silhouette emerges—a lone figure lying motionl
 [[Walk towards the silhouette and check.]]
 [[Walk around it.]]]]
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="25" name="Walk towards the silhouette and check." tags="ThirstyTurk" position="2525,250" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[You approach cautiously, step by step, until the figure becomes clear—a Turcoman man collapsed on the sand. His lips are parched and cracked, his body drained of strength, as if he has surrendered to the merciless desert.
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[You approach cautiously, step by step, until the figure becomes clear—a Turcoman man collapsed on the sand. His lips are parched and cracked, his body drained of strength, as if he has surrendered to the merciless desert.
 
 When his eyes flutter open, a flicker of hope ignites within them. Weakly, he raises a trembling hand and points toward your water bag. Though unable to speak, his intent is unmistakable. He isn’t just asking—he’s begging for water, his desperation laid bare.
 
@@ -457,7 +486,7 @@ You pause, torn. This water is your lifeline in this unforgiving desert. Can you
     (goto: &quot;Give water.&quot;)
     ]
 }</tw-passagedata><tw-passagedata pid="26" name="Walk around it." tags="ThirstyTurk" position="2775,250" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[You decide not to take the risk. Who knows? It could be a Turcoman feigning death, waiting to ambush and steal your supplies. Your mind churns with all manner of unsettling possibilities.
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[You decide not to take the risk. Who knows? It could be a Turcoman feigning death, waiting to ambush and steal your supplies. Your mind churns with all manner of unsettling possibilities.
 
 As you turn away, a wave of relief washes over you. Whatever the truth may be, you’re simply glad you didn’t have to face any of those imagined dangers.
 
@@ -469,7 +498,7 @@ As you turn away, a wave of relief washes over you. Whatever the truth may be, y
     (goto: &quot;TravelScreen4&quot;)
     ]
 }</tw-passagedata><tw-passagedata pid="27" name="Give water." tags="ThirstyTurk" position="2425,400" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[You offer the dying man a sip from your water bag. He eagerly wets his cracked lips, the life-giving liquid restoring a faint glimmer of vitality. A weak smile spreads across his face as he murmurs something, likely a word of thanks.
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[You offer the dying man a sip from your water bag. He eagerly wets his cracked lips, the life-giving liquid restoring a faint glimmer of vitality. A weak smile spreads across his face as he murmurs something, likely a word of thanks.
 
 But there’s little more you can do for him. With a heavy heart, you turn away and continue your journey, leaving the man to whatever fate the unforgiving desert holds for him.
 
@@ -481,7 +510,7 @@ But there’s little more you can do for him. With a heavy heart, you turn away 
     (goto: &quot;TravelScreen4&quot;)
     ]
 }</tw-passagedata><tw-passagedata pid="28" name="Walk away." tags="ThirstyTurk" position="2625,400" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[You barely have enough for yourself. The man’s hand falls and hits the sand. There is nothing you can do to help his man. With an uncomfortable feeling remaining in your heart, you slowly walk away.
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[You barely have enough for yourself. The man’s hand falls and hits the sand. There is nothing you can do to help his man. With an uncomfortable feeling remaining in your heart, you slowly walk away.
 
 |Places5&gt;[Keep walking...]]
 &lt;/div&gt;
@@ -491,7 +520,7 @@ But there’s little more you can do for him. With a heavy heart, you turn away 
     (goto: &quot;TravelScreen4&quot;)
     ]
 }</tw-passagedata><tw-passagedata pid="29" name="Keep walking..." tags="StrongHeat" position="3250,100" size="100,100">(transition: &quot;dissolve&quot;)+(transition-delay: $EncounterFadeInTime)+(transition-time: $EncounterFadeInTime)[&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[You continue walking, but it’s hard to tell how far you’ve come. Karakum Desert stretches endlessly before you, its vastness disorienting. Then, a dry, gnawing thirst creeps up your throat. Before you know it, your hand is reaching for your water bag.
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[You continue walking, but it’s hard to tell how far you’ve come. Karakum Desert stretches endlessly before you, its vastness disorienting. Then, a dry, gnawing thirst creeps up your throat. Before you know it, your hand is reaching for your water bag.
 
 Suddenly, Major Frankenburg grabs your wrist. “Your Highness, we’re still hundreds of miles from our destination. Drinking now will only make things worse later on.”
 
@@ -502,11 +531,12 @@ You hesitate, torn between the urgent temptation of thirst and the necessity of 
 &lt;/div&gt;
 {
 (click: ?DrinkWater)[
-	(set: $Water to it -3)
+	(set: $Water to it - 3)
+    (set: $TrustPoint to it - 1)
     (goto: &quot;Drink anyway.&quot;)
     ]
 }</tw-passagedata><tw-passagedata pid="30" name="Drink anyway." tags="StrongHeat" position="3150,225" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[Thirst overwhelms you. With a swift motion, you yank Frankenburg&#39;s hand away, bringing the water bag to your lips. The warm, fresh liquid rushes down your throat, revitalizing you in an instant.
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[Thirst overwhelms you. With a swift motion, you yank Frankenburg&#39;s hand away, bringing the water bag to your lips. The warm, fresh liquid rushes down your throat, revitalizing you in an instant.
 
 But when you look up, Frankenburg’s gaze is filled with disappointment. “You know we can’t afford to waste water, Your Highness.” Without another word, he turns and walks on.
 
@@ -515,7 +545,7 @@ You fall into step behind him, the sinking sun casting long shadows as the day b
 |CampEncounter&gt;[Start camp]]
 &lt;/div&gt;
 {(click: ?CampEncounter)[(goto: &quot;TravelScreen5&quot;)]}</tw-passagedata><tw-passagedata pid="31" name="Do not drink." tags="StrongHeat" position="3350,225" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[You cannot afford to give in now. The uncertainty of when—or if—you’ll be resupplied with water weighs heavily on you. Reluctantly, you let go of the water bag. Frankenburg sighs in relief. “Your discipline is admirable, Your Highness.”
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[You cannot afford to give in now. The uncertainty of when—or if—you’ll be resupplied with water weighs heavily on you. Reluctantly, you let go of the water bag. Frankenburg sighs in relief. “Your discipline is admirable, Your Highness.”
 
 A sense of quiet pride swells within you as you continue onward.
 
@@ -524,7 +554,7 @@ The sun begins its descent, casting a warm, fading glow over the desert as the d
 |CampEncounter&gt;[Start camp]]
 &lt;/div&gt;
 {(click: ?CampEncounter)[(goto: &quot;TravelScreen5&quot;)]}</tw-passagedata><tw-passagedata pid="32" name="Start camp" tags="CampFire" position="3350,425" size="100,100">(transition: &quot;dissolve&quot;)+(transition-delay: $EncounterFadeInTime)+(transition-time: $EncounterFadeInTime)[&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[Night falls, and you build a small campfire to warm yourself. The cold wind is relentless, biting into your skin with each gust. The crackling fire, though small, is the only comfort you have in this harsh desert night.
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[Night falls, and you build a small campfire to warm yourself. The cold wind is relentless, biting into your skin with each gust. The crackling fire, though small, is the only comfort you have in this harsh desert night.
 
 &quot;I&#39;ll take the first watch, Your Highness. Get some rest,&quot; Frankenburg says. You nod, grateful for his willingness.
 
@@ -533,11 +563,11 @@ A moment later, exhaustion takes over, and you fall into a deep, restless sleep.
 [[Go to sleep.]]]]
 &lt;/div&gt;
 </tw-passagedata><tw-passagedata pid="33" name="Go to sleep." tags="CampFire" position="3350,550" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[A few hours later, you awaken to the sound of rustling. As your eyes adjust, you see Major Frankenburg holding a large water bag, his back turned to you.
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[A few hours later, you awaken to the sound of rustling. As your eyes adjust, you see Major Frankenburg holding a large water bag, his back turned to you.
 
 [[&quot;What are you doing?&quot;]]]
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="34" name="&quot;What are you doing?&quot;" tags="CampFire" position="3350,675" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[Startled, he quickly spins around, a defensive look on his face. “I... I was just checking the supplies, Your Highness.”
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[Startled, he quickly spins around, a defensive look on his face. “I... I was just checking the supplies, Your Highness.”
 
 You rise, suspicion creeping in, and move toward the supplies. Upon inspecting the water bag, you discover some of the water has been consumed. A rush of betrayal surges through you. You turn to your lieutenant, your voice steady but sharp, demanding an explanation for his actions.
 
@@ -550,7 +580,7 @@ You rise, suspicion creeping in, and move toward the supplies. Upon inspecting t
     ]
 }
     </tw-passagedata><tw-passagedata pid="35" name="&quot;You drank our water?&quot;" tags="CampFire" position="3350,800" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[“Yes... I drank some, Your Highness. Just a sip, I swear it wasn’t much.” You recall the moment he stopped you from drinking earlier. Perhaps, he did that to conserve water for himself.
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[“Yes... I drank some, Your Highness. Just a sip, I swear it wasn’t much.” You recall the moment he stopped you from drinking earlier. Perhaps, he did that to conserve water for himself.
 
 But it seems Frankenburg is the one truly disappointed, his faith in you shaken. “Whether you believe me or not is up to you. If you no longer trust me, you can take my watch.” With that, he drops the water bag and turns toward his bunk, his back to you.
 
@@ -565,7 +595,7 @@ Still feeling uneasy, you decide to stay awake until dawn, the weight of suspici
     ]
 }
 </tw-passagedata><tw-passagedata pid="36" name="The dawn breaks..." tags="RealOasis" position="3750,100" size="100,100">(transition: &quot;dissolve&quot;)+(transition-delay: $EncounterFadeInTime)+(transition-time: $EncounterFadeInTime)[&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[The sun rises, casting a golden glow over the endless expanse of sand. You and Frankenburg silently break camp, each tending to your tasks without a word.
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[The sun rises, casting a golden glow over the endless expanse of sand. You and Frankenburg silently break camp, each tending to your tasks without a word.
 
 After packing your belongings, you begin the day’s trek. The vast, unchanging desert stretches endlessly before you.
 
@@ -574,7 +604,7 @@ Suddenly, something shimmers on the horizon. A cluster of palm trees... the glin
 [[Run towards it.]]
 [[What if it&#39;s a mirage? Walk away]]]]
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="37" name="Run towards it." tags="RealOasis" position="3625,225" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[Your steps grow heavier with each passing moment, the sand beneath your feet feeling like it’s pulling you down. Each step is a struggle, your body teetering on the edge of exhaustion. But you press on, driven by the faint glimmer of hope ahead.
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[Your steps grow heavier with each passing moment, the sand beneath your feet feeling like it’s pulling you down. Each step is a struggle, your body teetering on the edge of exhaustion. But you press on, driven by the faint glimmer of hope ahead.
 
 With every agonizing stride, a single thought repeats in your mind: Please, let this not be a mirage.
 
@@ -589,7 +619,7 @@ With every agonizing stride, a single thought repeats in your mind: Please, let 
 }
 
 </tw-passagedata><tw-passagedata pid="38" name="What if it&#39;s a mirage? Walk away" tags="RealOasis" position="3875,225" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[Mirages are a well-known phenomenon in this desert, a cruel trick of the heat and light. You refuse to gamble your time and strength on something so uncertain. With a heavy heart, you turn away and press on, continuing your arduous journey toward Khiva.
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[Mirages are a well-known phenomenon in this desert, a cruel trick of the heat and light. You refuse to gamble your time and strength on something so uncertain. With a heavy heart, you turn away and press on, continuing your arduous journey toward Khiva.
 
 |Places7&gt;[Continue on... ]]
 &lt;/div&gt;
@@ -600,7 +630,7 @@ With every agonizing stride, a single thought repeats in your mind: Please, let 
     ]
 }
 </tw-passagedata><tw-passagedata pid="39" name="Keep going." tags="RealOasis" position="3550,375" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[You summon the last reserves of your strength, each step an act of sheer willpower. Suddenly, the faint scent of water fills your senses—or at least you think it does.
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[You summon the last reserves of your strength, each step an act of sheer willpower. Suddenly, the faint scent of water fills your senses—or at least you think it does.
 
 The oasis grows nearer, and with a burst of jubilance, you break into a run. The world around you blurs as you sink to your knees at the water&#39;s edge, plunging your hands into the cool, life-giving liquid. You drink deeply, the sweet taste of survival washing away your fatigue.
 
@@ -616,7 +646,7 @@ Frankenburg arrives moments later, equally overjoyed. A wide grin spreads across
 }
 
 &lt;!--Trust point +1--&gt;</tw-passagedata><tw-passagedata pid="40" name="This isn&#39;t worth it. Go back." tags="RealOasis" position="3725,375" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[A sudden realization strikes you—this might be a mirage. The thought chills you more than the desert night ever could. Before it’s too late, you force yourself to stop, turn around, and retrace your steps.
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[A sudden realization strikes you—this might be a mirage. The thought chills you more than the desert night ever could. Before it’s too late, you force yourself to stop, turn around, and retrace your steps.
 
 Frankenburg groans in frustration, throwing his hands up. “We came all this way for nothing? God above, what a waste...”
 
@@ -632,25 +662,25 @@ You keep walking, ignoring his complaints, the weight of doubt pressing down on 
 }
 
 &lt;!--Trust point -1--&gt;</tw-passagedata><tw-passagedata pid="41" name="Continue on... " tags="Bandits" position="4225,100" size="100,100">(transition: &quot;dissolve&quot;)+(transition-delay: $EncounterFadeInTime)+(transition-time: $EncounterFadeInTime)[&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[Your soldier’s instinct screams danger. In the distance, you spot a group of Turcoman bandits on horseback and camels, racing toward you like a storm over the dunes. “Your Highness! Bandits!” Frankenburg shouts as both of you swiftly draw your pistols.
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[Your soldier’s instinct screams danger. In the distance, you spot a group of Turcoman bandits on horseback and camels, racing toward you like a storm over the dunes. “Your Highness! Bandits!” Frankenburg shouts as both of you swiftly draw your pistols.
 
 The bandits encircle you, their horses kicking up clouds of dust as they ride in a menacing loop. You and Frankenburg stand back-to-back, weapons raised, scanning the ring of hostile faces. From the throng, the leader emerges, an elderly man with a thick, white beard that cascades down to cover his neck. He raises a hand to signal his men to halt, and speaks with a gravelly voice, heavy with menace.
 
 “Christians, you have two choices: surrender, or die.”
 
-[[(Bluff) &quot;Careful bandits. Our army is within 2 miles.&quot;]]
-[[(Lie) &quot;We are doctors from Russia. Please let us go.&quot;]]
-|Bribe&gt;[(Bribe) &quot;How about you take this and let us be bygones?]
-|SpecialChoice&gt;[Among the bandits, you recognize one man]]]
+(hover-style: (text-style: &quot;shudder&quot;))[ [[(Bluff) &quot;Careful bandits. Our army is within 2 miles.&quot;]] ]
+(hover-style: (text-style: &quot;shudder&quot;))[ [[(Lie) &quot;We are doctors from Russia. Please let us go.&quot;]] ]
+(hover-style: (text-style: &quot;shudder&quot;))[ |Bribe&gt;[(Bribe) &quot;How about you take this and let us be bygones?] ]
+(text-colour: blue) + (hover-style: (text-style: &quot;shudder&quot;))[ |SpecialChoice&gt;[Among the bandits, you recognize one man] ]]]
 &lt;/div&gt;
 &lt;!--This choice is only availabe if player saves the Turcoman beforehand--&gt;
 {
 (if: $TurcomanSaved is true)[(show: ?SpecialChoice)]
 (else: ) [(hide: ?SpecialChoice)]
 (click: ?SpecialChoice)[(goto:&quot;Among the bandits, you recognize one man&quot;)]
-(click: ?Bribe)[(set: $Ducat to it -5)(goto: &#39;(Bribe) &quot;How about you take this and let us be bygones?&#39;)]
+(click: ?Bribe)[(set: $Ducat to it - 5)(goto: &#39;(Bribe) &quot;How about you take this and let us be bygones?&#39;)]
 }</tw-passagedata><tw-passagedata pid="42" name="(Bluff) &quot;Careful bandits. Our army is within 2 miles.&quot;" tags="Bandits" position="4075,225" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[The elder smirks, his grin sharp and unforgiving. “Do you take me for a fool? This desert is my domain. No help is coming for you.” With a snap of his fingers, he barks the order, “Take them away!”
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[The elder smirks, his grin sharp and unforgiving. “Do you take me for a fool? This desert is my domain. No help is coming for you.” With a snap of his fingers, he barks the order, “Take them away!”
 
 The bandits surge forward like a pack of wolves. Their rough hands grab at you, tearing away your belongings and ripping at your clothes. You thrash and resist, but it’s futile. Their numbers overwhelm you, and your strength is no match for their relentless grip.
 
@@ -659,14 +689,14 @@ The bandits surge forward like a pack of wolves. Their rough hands grab at you, 
 {
 (click: ?GameOver)[(goto: &quot;GameOver&quot;)]
 }</tw-passagedata><tw-passagedata pid="43" name="(Lie) &quot;We are doctors from Russia. Please let us go.&quot;" tags="Bandits" position="4225,225" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[&quot;Hah! Doctors carrying weapons? How ironic. You can&#39;t save anyone with that weapon of murder! That weapon is for us, isn&#39;t it?&quot;
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[&quot;Hah! Doctors carrying weapons? How ironic. You can&#39;t save anyone with that weapon of murder! That weapon is for us, isn&#39;t it?&quot;
 
-[[(Persuade) &quot;You defend yourself against our kind. I am just doing the same.&quot;]]
-[[(Threaten) &quot;Yes. And we know where to shoot just as much as know how to cure others.&quot;]]
-[[(Beg)&quot;Please... Let us go. We are just on our way to help people.&quot;]]]
+(hover-style: (text-style: &quot;shudder&quot;))[ [[(Persuade) &quot;You defend yourself against our kind. I am just doing the same.&quot;]] ]
+(hover-style: (text-style: &quot;shudder&quot;))[ [[(Threaten) &quot;Yes. And we know where to shoot just as much as know how to cure others.&quot;]] ]
+(hover-style: (text-style: &quot;shudder&quot;))[ [[(Beg)&quot;Please... Let us go. We are just on our way to help people.&quot;]]] ]
 &lt;/div&gt;
 </tw-passagedata><tw-passagedata pid="44" name="(Bribe) &quot;How about you take this and let us be bygones?" tags="Bandits" position="4500,225" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[The elder glances at the coin pouch and bursts into laughter. “Hah! You Christians are always the same—hiding behind your gold, thinking it can solve everything.” He pauses as one of the bandits leans in and whispers something into his ear. The elder strokes his thick beard thoughtfully before speaking again. “Hmm... Perhaps we don’t need to spill blood today. Consider yourselves fortunate, Christians. Now, drop those coins!”
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[The elder glances at the coin pouch and bursts into laughter. “Hah! You Christians are always the same—hiding behind your gold, thinking it can solve everything.” He pauses as one of the bandits leans in and whispers something into his ear. The elder strokes his thick beard thoughtfully before speaking again. “Hmm... Perhaps we don’t need to spill blood today. Consider yourselves fortunate, Christians. Now, drop those coins!”
 
 You carefully lower the pouch to the ground, your every movement deliberate. The moment it lands, you turn and run with Frankenburg at your side. Behind you, the elder’s booming laughter echoes across the desert, mocking your retreat.
 
@@ -680,7 +710,7 @@ You don’t look back. Your only focus now is putting as much distance as possib
     (goto: &quot;TravelScreen8&quot;)
     ]
 }</tw-passagedata><tw-passagedata pid="45" name="Among the bandits, you recognize one man" tags="Bandits" position="4375,225" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[The man among the bandits rides up to the elder and leans in, whispering something in his ear. The elder&#39;s eyes narrow as he listens. Finally, the elder speaks, his voice laced with both curiosity and disdain. &quot;My lieutenant tells me you saved him—gave him your precious water. An unlikely act for a Christian... sharing life with one of us.&quot;
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[The man among the bandits rides up to the elder and leans in, whispering something in his ear. The elder&#39;s eyes narrow as he listens. Finally, the elder speaks, his voice laced with both curiosity and disdain. &quot;My lieutenant tells me you saved him—gave him your precious water. An unlikely act for a Christian... sharing life with one of us.&quot;
 
 The elder squints at you, his expression a mask of contemplation.  After a tense moment, he declares, &quot;Consider this our debt repaid, Christians. But make no mistake—should we meet again, we will enslave you.&quot; As the elder raises his hand, the bandits turn and ride away, their figures dissolving into the endless sands.
 
@@ -698,14 +728,14 @@ Frankenburg exhales deeply. “Well... it seems God’s Golden Rule has worked i
 }
 
 </tw-passagedata><tw-passagedata pid="46" name="(Persuade) &quot;You defend yourself against our kind. I am just doing the same.&quot;" tags="Bandits" position="4075,400" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[The elder seems momentarily taken aback, his sharp eyes narrowing in thought. “Well said, doctor... Perhaps every man does have the right to defend himself. It would be unjust to deny that.”
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[The elder seems momentarily taken aback, his sharp eyes narrowing in thought. “Well said, doctor... Perhaps every man does have the right to defend himself. It would be unjust to deny that.”
 
 He pauses, stroking his thick, white beard, before continuing. “Then let’s make this simple. We’re a little short on water. You give us some of yours, and we’ll walk away. How about that?” His tone grows colder, more commanding. “Not that you have much of a choice. Refuse, and we’ll just take it by force.”
 
 The bandits murmur in agreement, their horses snorting impatiently. The tension in the air thickens as the elder waits for your reply.
 
-|GiveUpWater&gt;[&quot;Alright then.&quot;]
-[[&quot;You can&#39;t force us to give in.&quot;]]]
+(hover-style: (text-style: &quot;shudder&quot;))[ |GiveUpWater&gt;[&quot;Alright then.&quot;] ]
+(hover-style: (text-style: &quot;shudder&quot;))[ [[&quot;You can&#39;t force us to give in.&quot;]]] ]
 &lt;/div&gt;
 {
 (click: ?GiveUpWater)[
@@ -715,28 +745,28 @@ The bandits murmur in agreement, their horses snorting impatiently. The tension 
     (goto: &#39;&quot;Alright then.&quot;&#39;)
     ]
 }</tw-passagedata><tw-passagedata pid="47" name="(Threaten) &quot;Yes. And we know where to shoot just as much as know how to cure others.&quot;" tags="Bandits" position="4225,400" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[The elder flinches a bit. &quot;You know what is going to befall on you if you shoot me.&quot;
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[The elder flinches a bit. &quot;You know what is going to befall on you if you shoot me.&quot;
 
-[[&quot;At least I will be taking you down with me.&quot;]]
-[[&quot;I rather die than surrender my diginity to you!&quot;]]]
+(hover-style: (text-style: &quot;shudder&quot;))[ [[&quot;At least I will be taking you down with me.&quot;]] ]
+(hover-style: (text-style: &quot;shudder&quot;))[ [[&quot;I rather die than surrender my diginity to you!&quot;]]] ]
 &lt;/div&gt;
 </tw-passagedata><tw-passagedata pid="48" name="(Beg)&quot;Please... Let us go. We are just on our way to help people.&quot;" tags="Bandits" position="4375,400" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[&quot;Well... Doctors... We don&#39;t want to. Take them away!&quot; The bandits surge forward like a pack of wolves. Their rough hands grab at you, tearing away your belongings and ripping at your clothes. You thrash and resist, but it’s futile. Their numbers overwhelm you, and your strength is no match for their relentless grip.
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[&quot;Well... Doctors... We don&#39;t want to. Take them away!&quot; The bandits surge forward like a pack of wolves. Their rough hands grab at you, tearing away your belongings and ripping at your clothes. You thrash and resist, but it’s futile. Their numbers overwhelm you, and your strength is no match for their relentless grip.
 
 |GameOver&gt;[Game over]]
 &lt;/div&gt;
 {
 (click: ?GameOver)[(goto: &quot;GameOver&quot;)]
 }
-</tw-passagedata><tw-passagedata pid="49" name="&quot;At least I will be taking you down with me.&quot;" tags="Bandits" position="4225,550" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[The elder stares at you for a moment. Then he waves his men to lower their weapons. &quot;Well... //Doctors//... Your spirit is somewhat admirable. Those other Christians tend to cower and beg for their lives... Pathetic.&quot; 
+</tw-passagedata><tw-passagedata pid="49" name="&quot;At least I will be taking you down with me.&quot;" tags="Bandits" position="4225,575" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[The elder stares at you for a moment. Then he waves his men to lower their weapons. &quot;Well... //Doctors//... Your spirit is somewhat admirable. Those other Christians tend to cower and beg for their lives... Pathetic.&quot; 
 
 He pauses, stroking his thick, white beard, before continuing. “Then let’s make this simple. We’re a little short on water. You give us some of yours, and we’ll walk away. How about that?” His tone grows colder, more commanding. “Not that you have much of a choice. Refuse, and we’ll just take it by force.”
 
 The bandits murmur in agreement, their horses snorting impatiently. The tension in the air thickens as the elder waits for your reply.
 
-|GiveUpWater&gt;[&quot;Alright then.&quot;]
-[[&quot;You can&#39;t force us to give in.&quot;]]]
+(hover-style: (text-style: &quot;shudder&quot;))[ |GiveUpWater&gt;[&quot;Alright then.&quot;] ]
+(hover-style: (text-style: &quot;shudder&quot;))[ [[&quot;You can&#39;t force us to give in.&quot;]]] ]
 &lt;/div&gt;
 {
 (click: ?GiveUpWater)[
@@ -747,14 +777,14 @@ The bandits murmur in agreement, their horses snorting impatiently. The tension 
     ]
 }
 </tw-passagedata><tw-passagedata pid="50" name="&quot;I rather die than surrender my diginity to you!&quot;" tags="Bandits" position="4375,550" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[The elder stares at you for a moment. Then he waves his men to lower their weapons. &quot;Dignity can get you killed doctors. But I admire your will to survive.&quot;
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[The elder stares at you for a moment. Then he waves his men to lower their weapons. &quot;Dignity can get you killed doctors. But I admire your will to survive.&quot;
 
 He pauses, stroking his thick, white beard, before continuing. “Then let’s make this simple. We’re a little short on water. You give us some of yours, and we’ll walk away. How about that?” His tone grows colder, more commanding. “Not that you have much of a choice. Refuse, and we’ll just take it by force.”
 
 The bandits murmur in agreement, their horses snorting impatiently. The tension in the air thickens as the elder waits for your reply.
 
-|GiveUpWater&gt;[&quot;Alright then.&quot;]
-[[&quot;You can&#39;t force us to give in.&quot;]]]
+(hover-style: (text-style: &quot;shudder&quot;))[ |GiveUpWater&gt;[&quot;Alright then.&quot;] ]
+(hover-style: (text-style: &quot;shudder&quot;))[ [[&quot;You can&#39;t force us to give in.&quot;]]] ]
 &lt;/div&gt;
 {
 (click: ?GiveUpWater)[
@@ -764,7 +794,7 @@ The bandits murmur in agreement, their horses snorting impatiently. The tension 
     (goto: &#39;&quot;Alright then.&quot;&#39;)
     ]
 }</tw-passagedata><tw-passagedata pid="51" name="&quot;Alright then.&quot;" tags="Bandits" position="4225,700" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[You and Frankenburg reluctantly drop your water bags at the elder’s feet. He eyes them with a twisted satisfaction, a sly grin creeping across his face. “May Allah watch over you,” he says, his voice dripping with sarcasm. “This desert is a cruel one.”
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[You and Frankenburg reluctantly drop your water bags at the elder’s feet. He eyes them with a twisted satisfaction, a sly grin creeping across his face. “May Allah watch over you,” he says, his voice dripping with sarcasm. “This desert is a cruel one.”
 
 With a final glance, the bandits turn and ride off into the wasteland, their presence now just a fading memory in the harsh silence of the desert.
 
@@ -779,14 +809,14 @@ Once they are gone, you and Frankenburg rise to your feet. You exchange a brief 
     ]
 }
 </tw-passagedata><tw-passagedata pid="52" name="&quot;You can&#39;t force us to give in.&quot;" tags="Bandits" position="4375,700" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[The elder sighs. &quot;Actually... We can... You should know your place Christians.... Take them away!&quot; The bandits surge forward like a pack of wolves. Their rough hands grab at you, tearing away your belongings and ripping at your clothes. You thrash and resist, but it’s futile. Their numbers overwhelm you, and your strength is no match for their relentless grip.]
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[The elder sighs. &quot;Actually... We can... You should know your place Christians.... Take them away!&quot; The bandits surge forward like a pack of wolves. Their rough hands grab at you, tearing away your belongings and ripping at your clothes. You thrash and resist, but it’s futile. Their numbers overwhelm you, and your strength is no match for their relentless grip.]
 
 |GameOver&gt;[Game over]]]
 &lt;/div&gt;
 {
 (click: ?GameOver)[(goto: &quot;GameOver&quot;)]
 }</tw-passagedata><tw-passagedata pid="53" name="Keep walking... " tags="ExtremeHeat" position="4800,100" size="100,100">(transition: &quot;dissolve&quot;)+(transition-delay: $EncounterFadeInTime)+(transition-time: $EncounterFadeInTime)[&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[You have lost track of how long you’ve been walking. The heat is becoming unbearable. Each step is a struggle against the relentless sun that scorches your skin and parches your throat. Your body aches with thirst, its desperate cry for water echoing in every fiber of your being.
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[You have lost track of how long you’ve been walking. The heat is becoming unbearable. Each step is a struggle against the relentless sun that scorches your skin and parches your throat. Your body aches with thirst, its desperate cry for water echoing in every fiber of your being.
 
 |DrinkWater&gt;[Drink water.]
 [[Do not drink. ]]
@@ -810,7 +840,7 @@ Once they are gone, you and Frankenburg rise to your feet. You exchange a brief 
     (else: )[(goto: &quot;Frankenburg taking your water&quot;)]
     ]
 }</tw-passagedata><tw-passagedata pid="54" name="Drink water." tags="ExtremeHeat" position="4700,225" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[Your resourcefulness proves invaluable as you drink just enough to keep moving.
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[Your resourcefulness proves invaluable as you drink just enough to keep moving.
 
 You notice Major Frankenburg stumbling along, his movements sluggish. You offer him your water, but he waves it away. &quot;Your highness... You must save that bit. If one of us is to survive, it must be you...&quot;
 
@@ -824,19 +854,28 @@ You don’t respond, but deep down, you&#39;re grateful to still have some water
     (goto: &quot;TravelScreen9&quot;)
     ]
 }</tw-passagedata><tw-passagedata pid="55" name="Do not drink. " tags="ExtremeHeat" position="4900,225" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[The heat becomes too much to endure. You collapse onto the sand, unable to move. Your vision fades, darkness creeping in, a permanent silence taking hold.
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[The heat becomes too much to endure. You collapse onto the sand, unable to move. Your vision fades, darkness creeping in, a permanent silence taking hold.
 
 |GameOver&gt;[Game over]]
 &lt;/div&gt;
 {
 (click: ?GameOver)[(goto: &quot;GameOver&quot;)]
 }</tw-passagedata><tw-passagedata pid="56" name="Continue on...  " tags="Merchant" position="5200,100" size="100,100">(transition: &quot;dissolve&quot;)+(transition-delay: $EncounterFadeInTime)+(transition-time: $EncounterFadeInTime)[&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[In the distance, you spot the silhouette of a Turcoman, leading a camel loaded with supplies. This time, you don&#39;t sense any immediate danger. Perhaps it&#39;s the fact that there is only one man. You and Frankenburg begin walking toward him cautiously.
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[In the distance, you spot the silhouette of a Turcoman, leading a camel loaded with supplies. This time, you don&#39;t sense any immediate danger. Perhaps it&#39;s the fact that there is only one man. You and Frankenburg begin walking toward him cautiously.
 
 As you draw closer, the Turcoman greets you with a broad smile, raising his hands in a welcoming gesture. &quot;Christian! Welcome! Desert bad! You need water! Water, ey? Water very cheap! Only 20 Ducats! Buy!&quot;
 
 |Purchase&gt;[Purchase supplies. (20 Ducats)]
-[[Leave.]]]]
+[[Leave.]]]
+
+
+
+
+
+
+
+
+]
 &lt;/div&gt;
 {
 (if: $Ducat &gt;= 20)[(show: ?Purchase)]
@@ -848,7 +887,7 @@ As you draw closer, the Turcoman greets you with a broad smile, raising his hand
     ]
 }
 </tw-passagedata><tw-passagedata pid="57" name="Purchase supplies. (20 Ducats)" tags="Merchant" position="5125,225" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[You hand the pouch of coins to the merchant. He quickly grabs it, counting the coins with a practiced eye. Once he confirms the sum is correct, he bursts into loud laughter. Shoving the money into his pocket, he grabs the large water bag from his camel.
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[You hand the pouch of coins to the merchant. He quickly grabs it, counting the coins with a practiced eye. Once he confirms the sum is correct, he bursts into loud laughter. Shoving the money into his pocket, he grabs the large water bag from his camel.
 
 With a broad smile, the merchant hands you the water bag. &quot;Heh heh! Good trade, Christians! Good trade!&quot; he says, turning and walking away with his camel.
 
@@ -863,7 +902,7 @@ Watching the merchant&#39;s exaggerated reaction, you can&#39;t help but feel de
     ]
 }
 </tw-passagedata><tw-passagedata pid="58" name="Leave." tags="Merchant" position="5300,225" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[The price is absurd. You can tell the merchant is trying to swindle you. But rather than resorting to force, you choose to simply walk away. As you turn, you hear the merchant&#39;s disgruntled voice rise behind you. &quot;Eh? Why not? This is a good price!&quot;
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[The price is absurd. You can tell the merchant is trying to swindle you. But rather than resorting to force, you choose to simply walk away. As you turn, you hear the merchant&#39;s disgruntled voice rise behind you. &quot;Eh? Why not? This is a good price!&quot;
 
 |Places10&gt;[Keep walking...  ]]
 &lt;/div&gt;
@@ -872,17 +911,71 @@ Watching the merchant&#39;s exaggerated reaction, you can&#39;t help but feel de
 	(set: $Water to it - 1)
     (goto: &quot;TravelScreen10&quot;)
     ]
-}</tw-passagedata><tw-passagedata pid="59" name="Keep walking...  " tags="Mirage" position="5650,75" size="100,100">(transition: &quot;dissolve&quot;)+(transition-delay: $EncounterFadeInTime)+(transition-time: $EncounterFadeInTime)[&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[Far away, you see something very faintly. Palm tree… Pond… It’s an oasis! Again!
+}</tw-passagedata><tw-passagedata pid="59" name="Keep walking...  " tags="Mirage" position="5650,100" size="100,100">(transition: &quot;dissolve&quot;)+(transition-delay: $EncounterFadeInTime)+(transition-time: $EncounterFadeInTime)[&lt;div id=&quot;TextBox&quot;&gt;
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[Far away, you see something very faintly. Palm tree… Pond… It’s an oasis! Again!
 
 [[Run towards it. ]]
-[[Walk away from it.]]]]
-&lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="60" name="Run towards it. " tags="Mirage" position="5550,225" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[You summon every last ounce of strength, staggering forward with desperate hope that it isn’t just a mirage. Behind you, Frankenburg shouts, his voice strained but firm. “Your Highness! Take it slow! Don’t waste your strength now!”
+[[Walk away from it.]]]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="60" name="Run towards it. " tags="Mirage" position="5550,225" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[You summon every last ounce of strength, staggering forward with desperate hope that it isn’t just a mirage. Behind you, Frankenburg shouts, his voice strained but firm. “Your Highness! Take it slow! Don’t waste your strength now!”
 
 |LoseCoin&gt;[Keep running.]
 [[Stop and walk away.]]]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;/div&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 &lt;/div&gt;
 {
 (click: ?LoseCoin)[
@@ -890,9 +983,29 @@ Watching the merchant&#39;s exaggerated reaction, you can&#39;t help but feel de
     (goto: &quot;Keep running.&quot;)
     ]
 }</tw-passagedata><tw-passagedata pid="61" name="Walk away from it." tags="Mirage" position="5750,225" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[Your instincts scream at you, &quot;DON&#39;T GO.&quot; The feeling is so powerful, so undeniable, that you’re certain venturing further would be a mistake. Trusting the voice within, you turn away and press on, leaving the unknown behind.
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[Your instincts scream at you, &quot;DON&#39;T GO.&quot; The feeling is so powerful, so undeniable, that you’re certain venturing further would be a mistake. Trusting the voice within, you turn away and press on, leaving the unknown behind.
 
 |Places11&gt;[Continue on...   ]]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 &lt;/div&gt;
 {
 (click: ?Places11)[
@@ -901,7 +1014,7 @@ Watching the merchant&#39;s exaggerated reaction, you can&#39;t help but feel de
     ]
 }
 </tw-passagedata><tw-passagedata pid="62" name="Keep running." tags="Mirage" position="5475,400" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[You stumble forward, driven by faint hope, but the oasis stubbornly remains just as distant as before.
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[You stumble forward, driven by faint hope, but the oasis stubbornly remains just as distant as before.
 
 Finally, you stop, your heart sinking as you realize you’ve dropped more of your precious coins along the way. Regret floods over you for your poor decision, and anger at your own carelessness boils within. You fall to your knees, consumed by despair.
 
@@ -918,13 +1031,21 @@ Your knees tremble beneath you, heavy with exhaustion and doubt. Yet, you know h
     ]
 }
 &lt;!--Lose Trustpoint?--&gt;</tw-passagedata><tw-passagedata pid="63" name="Stop and walk away." tags="Mirage" position="5650,400" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[Hearing Frankenburg’s urgent shout, you come to a halt. Your eyes dart left and right, scanning the area for any sign of danger. Then, you glance down at your ragged clothes. The realization stings.
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[Hearing Frankenburg’s urgent shout, you come to a halt. Your eyes dart left and right, scanning the area for any sign of danger. Then, you glance down at your ragged clothes. The realization stings.
 
 Moments later, a heavily breathing Frankenburg catches up to you. “Your Highness! Thank God... you stopped...” he pants, relief evident in his voice.
 
 You’re thankful for his intervention. Taking a steadying breath, you resolve to calm yourself and regain focus. This is no place for carelessness.
 
 |Places11&gt;[Continue on...   ]]
+
+
+
+
+
+
+
+
 &lt;/div&gt;
 {
 (click: ?Places11)[
@@ -933,8 +1054,8 @@ You’re thankful for his intervention. Taking a steadying breath, you resolve t
     ]
 }
 
-</tw-passagedata><tw-passagedata pid="64" name="Continue on...   " tags="DeathDoor" position="6150,75" size="100,100">(transition: &quot;dissolve&quot;)+(transition-delay: $EncounterFadeInTime)+(transition-time: $EncounterFadeInTime)[&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[Behind you, Major Frankenburg collapses onto the scorching sand. Alarmed, you quickly turn and kneel beside him to check his condition. His lips are parched and cracked, his voice barely audible. &quot;Your Highness... water... please...&quot;
+</tw-passagedata><tw-passagedata pid="64" name="Continue on...   " tags="DeathDoor" position="6150,100" size="100,100">(transition: &quot;dissolve&quot;)+(transition-delay: $EncounterFadeInTime)+(transition-time: $EncounterFadeInTime)[&lt;div id=&quot;TextBox&quot;&gt;
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[Behind you, Major Frankenburg collapses onto the scorching sand. Alarmed, you quickly turn and kneel beside him to check his condition. His lips are parched and cracked, his voice barely audible. &quot;Your Highness... water... please...&quot;
 
 |GiveWater&gt;[Give water. ]
 [[Don&#39;t give water.]]]]
@@ -951,7 +1072,7 @@ You’re thankful for his intervention. Taking a steadying breath, you resolve t
 &lt;!--If Water is more then 10, this event is skipped.--&gt;
 &lt;!--losing 10 seems bit too much when giving water....--&gt;
 &lt;!--should this be included...?--&gt;</tw-passagedata><tw-passagedata pid="65" name="Give water. " tags="DeathDoor" position="6025,225" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[You open your water bag and carefully drip water into his parched mouth. As the cool liquid touches his lips, Major Frankenburg slowly opens his eyes. &quot;Thank you... Your Highness,&quot; he whispers weakly.
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[You open your water bag and carefully drip water into his parched mouth. As the cool liquid touches his lips, Major Frankenburg slowly opens his eyes. &quot;Thank you... Your Highness,&quot; he whispers weakly.
 
 After a moment, you help him to his feet. Though unsteady and frail, he manages to stand with your support. Together, you press forward, each step heavier than the last, but resolute in your mission.
 
@@ -963,7 +1084,7 @@ After a moment, you help him to his feet. Though unsteady and frail, he manages 
     (goto: &quot;TravelScreen12&quot;)
     ]
 }</tw-passagedata><tw-passagedata pid="66" name="Don&#39;t give water." tags="DeathDoor" position="6250,225" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[Selfishness takes hold of you. The water is your lifeline, and you decide it must remain yours alone. Major Frankenburg doesn’t protest. He simply closes his eyes, his breath slowing.
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[Selfishness takes hold of you. The water is your lifeline, and you decide it must remain yours alone. Major Frankenburg doesn’t protest. He simply closes his eyes, his breath slowing.
 
 You reach down, take his dog tag, and gently close his eyes. Laying him down carefully, you force yourself to turn away.
 
@@ -977,22 +1098,50 @@ Without looking back, you move forward, each step heavy with the weight of guilt
     (goto: &quot;TravelScreen12&quot;)
     ]
 }</tw-passagedata><tw-passagedata pid="67" name="Main Menu" tags="MainMenu" position="825,25" size="100,100">&lt;h1&gt;[The Great Game]&lt;/h1&gt;
-[[Start]]
-</tw-passagedata><tw-passagedata pid="68" name="Put the order back into your pocket." tags="Astrakan" position="825,625" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[As you finish reading the order, you fold the parchment with care and tuck it into your inner pocket. The weight of its significance presses against your chest. You know all too well the dangers of failure. Tsar Nicholas I is a man of unyielding resolve, one who spares no forgiveness for those who falter. Yet, this mission is not only a risk but an opportunity. Success could elevate you in the eyes of the Tsar, a chance to carve your name into the annals of the Empire.
+|Resume&gt;[Resume]
+|Start&gt;[Start]
+{
+(if: (saved-games:) contains &quot;Resume&quot;)[
+(show: ?Resume)
+(click: ?Resume)[(load-game: &quot;Resume&quot;)]
+]
+(else:)[(hide: ?Resume)]
+
+(click: ?Start)[
+	(set: $Water to 20)
+    (set: $Ducat to 20)
+    (set: $DisplaySideBar to false)
+    (set: $TurcomanSaved to false)
+    (set: $TrustPoint to 0)
+    (set: $EncounterFadeInTime to 2s)
+    (set: $Map to &quot;&lt;img src = &#39;Images/Map_Place1.png&#39; class = &#39;Map&#39;&gt;&quot;)
+    (set: $BoxWidth to &quot;=XXXXXXXXXXXXXXXXXX=&quot;)
+    (goto: &quot;Start&quot;)
+    ]
+}</tw-passagedata><tw-passagedata pid="68" name="Put the order back into your pocket." tags="Astrakan" position="825,625" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
+(align:&quot;&lt;==&quot;)+(box: $BoxWidth)[As you finish reading the order, you fold the parchment with care and tuck it into your inner pocket. The weight of its significance presses against your chest. You know all too well the dangers of failure. Tsar Nicholas I is a man of unyielding resolve, one who spares no forgiveness for those who falter. Yet, this mission is not only a risk but an opportunity. Success could elevate you in the eyes of the Tsar, a chance to carve your name into the annals of the Empire.
 
 Your thoughts are interrupted as your lieutenant, Major Frankenburg, strides toward you. He halts and salutes. &quot;Your Highness, supplies are loaded, and we are ready to depart,&quot; he reports with precision.
 
 [[Salute back]]
 [[&quot;That took longer than I expected.&quot;]]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="69" name="Data" tags="header" position="250,25" size="100,100">{(set: $Water to 1)
+</tw-passagedata><tw-passagedata pid="69" name="TestData" tags="" position="75,25" size="100,100">(set: $Water to 20)
 (set: $Ducat to 20)
 (set: $DisplaySideBar to false)
 (set: $TurcomanSaved to false)
 (set: $TrustPoint to 0)
 (set: $EncounterFadeInTime to 2s)
 (set: $Map to &quot;&lt;img src = &#39;Images/Map_Place1.png&#39; class = &#39;Map&#39;&gt;&quot;)
-}</tw-passagedata><tw-passagedata pid="70" name="UI" tags="footer" position="250,150" size="100,100">&lt;!--Player Data Display--&gt;
+(set: $BoxWidth to &quot;=XXX=&quot;)
+
+#TextBox {
+  top: -1.5em;
+  background-position: 50% -2em;
+  background-image: url(&quot;Images/TextUI1.png&quot;);
+  background-size: 80% 110%;
+  background-repeat: no-repeat;
+}
+</tw-passagedata><tw-passagedata pid="70" name="UI" tags="footer" position="250,150" size="100,100">&lt;!--Player Data Display--&gt;
 (if: (passage:)&#39;s tags contains &quot;Intro&quot; or (passage:)&#39;s tags contains &quot;MainMenu&quot; or (passage:)&#39;s tags contains &quot;BritishOffice&quot;)[(set: $DisplaySideBar to false)]
 (else:)[(set: $DisplaySideBar to true)]
 (if: $DisplaySideBar is true)[(append: ?SideBar)[
@@ -1016,8 +1165,8 @@ Your thoughts are interrupted as your lieutenant, Major Frankenburg, strides tow
     (dialog: $Map, &quot;Close&quot;)
 ]
 
-</tw-passagedata><tw-passagedata pid="71" name="Enter the city." tags="Khiva" position="6700,200" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[As you pass through the towering gates, you notice rows of Khivan soldiers lined up along the street. Each holds a sword aloft, forming an archway of gleaming steel for you and the khan to pass through. However, the display is less impressive up close. Some of their arms tremble under the weight of their swords, and to your surprise, a few of the soldiers are barely more than children.
+&lt;!--Test Data--&gt;</tw-passagedata><tw-passagedata pid="71" name="Enter the city." tags="Khiva" position="6700,200" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[As you pass through the towering gates, you notice rows of Khivan soldiers lined up along the street. Each holds a sword aloft, forming an archway of gleaming steel for you and the khan to pass through. However, the display is less impressive up close. Some of their arms tremble under the weight of their swords, and to your surprise, a few of the soldiers are barely more than children.
 
 Despite this, the khan rides proudly, gesturing toward his men with a beaming smile. “My soldiers!” he proclaims. “A testament to great discipline and loyalty!”
 
@@ -1026,7 +1175,7 @@ Despite this, the khan rides proudly, gesturing toward his men with a beaming sm
 
 
 </tw-passagedata><tw-passagedata pid="72" name="Have to keep moving..." tags="Khiva" position="6700,75" size="100,100">(transition: &quot;dissolve&quot;)+(transition-delay: $EncounterFadeInTime)+(transition-time: $EncounterFadeInTime)[&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[You finally arrive at the gates of Khiva. Finally, safe at last. The massive wooden gates creak open. A group of soldiers rides out to meet you, their faces stern but curious. Among them, a man dressed in opulent robes approaches, his arms outstretched in a welcoming gesture.
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[You finally arrive at the gates of Khiva. Finally, safe at last. The massive wooden gates creak open. A group of soldiers rides out to meet you, their faces stern but curious. Among them, a man dressed in opulent robes approaches, his arms outstretched in a welcoming gesture.
 
 “My honorable guests!” he exclaims, his voice warm and commanding. “Welcome to my city! You have endured a rough journey, but now, think of this place as your home!”
 
@@ -1034,7 +1183,7 @@ The khan gestures, and his attendants bring forward horses for you. Exhausted bu
 
 [[Enter the city.]]]]
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="73" name="&quot;Yes... Indeed..." tags="Khiva" position="6700,325" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[You and the khan approach the palace, its grandeur towering before you. Massive gates, lavishly adorned with gold and encrusted with glittering diamonds, greet you. The opulence is almost overwhelming, radiating an air of indulgence and excess.
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[You and the khan approach the palace, its grandeur towering before you. Massive gates, lavishly adorned with gold and encrusted with glittering diamonds, greet you. The opulence is almost overwhelming, radiating an air of indulgence and excess.
 
 The khan turns to you with a self-satisfied grin, spreading his arms wide. “Behold my palace!” he declares, his voice brimming with pride. “What do you think? Fifty thousand slaves labored to create this masterpiece!”
 
@@ -1045,7 +1194,7 @@ You glance at the gates again, their splendor now carrying a bitter weight.
 &lt;/div&gt;
 
 </tw-passagedata><tw-passagedata pid="74" name="Nod your head." tags="Khiva" position="6575,475" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[The khan looks at you with big grin on his face. You smile back at him and keep riding.
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[The khan looks at you with big grin on his face. You smile back at him and keep riding.
 
 |FrankenburgResponse&gt;[Approach the gate.]]
 &lt;/div&gt;
@@ -1056,7 +1205,7 @@ You glance at the gates again, their splendor now carrying a bitter weight.
 ]
 }
 </tw-passagedata><tw-passagedata pid="75" name="Stay silent." tags="Khiva" position="6825,475" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[The khan looks at you with squinted eyes. He even stares at you for a moment. Then, he quickly puts grin back on his face.
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[The khan looks at you with squinted eyes. He even stares at you for a moment. Then, he quickly puts grin back on his face.
 
 |FrankenburgResponse&gt;[Approach the gate.]]
 &lt;/div&gt;
@@ -1067,7 +1216,7 @@ You glance at the gates again, their splendor now carrying a bitter weight.
 ]
 }
 </tw-passagedata><tw-passagedata pid="76" name="Approach the gate." tags="Khiva" position="6700,675" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[As you and the khan approach the gates, he suddenly turns to you with a grin. “I want to speak to you alone! Your friend can wait elsewhere.” He raises his hand and orders his soldiers to escort Frankenburg to another part of the palace. “No need to worry! He will be well taken care of,” the khan assures you.
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[As you and the khan approach the gates, he suddenly turns to you with a grin. “I want to speak to you alone! Your friend can wait elsewhere.” He raises his hand and orders his soldiers to escort Frankenburg to another part of the palace. “No need to worry! He will be well taken care of,” the khan assures you.
 
 But Frankenburg, clearly unsettled, protests vehemently. “Your Highness! I cannot stay away from you! It is my duty to remain by your side and offer counsel!”
 
@@ -1077,19 +1226,19 @@ But Frankenburg, clearly unsettled, protests vehemently. “Your Highness! I can
 
 
 //Play this passage if trust point is high enough</tw-passagedata><tw-passagedata pid="77" name="&quot;Your majesty, I need my lieutenant.&quot;" tags="Khiva" position="6625,825" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[The khan scratches his head, his expression shifting slightly. He then raises his voice, “I am only trying to serve my guests… You not want my service? He will be fine!”
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[The khan scratches his head, his expression shifting slightly. He then raises his voice, “I am only trying to serve my guests… You not want my service? He will be fine!”
 
 With a swift command, his guards move to escort Frankenburg away. As Frankenburg is led off, the khan watches the scene with a broad grin on his face, clearly pleased with himself.
 
 [[Get off the horse.]]]
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="78" name="&quot;Go rest Frankenburg. I will see you after.&quot;" tags="Khiva" position="6775,825" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[The khan laughs heartily, his voice booming, “Yes! Please, I only wish to serve you!” His guards swiftly approach and escort Frankenburg away. As Frankenburg is led off, the khan watches the scene with a wide grin, clearly pleased with his actions.
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[The khan laughs heartily, his voice booming, “Yes! Please, I only wish to serve you!” His guards swiftly approach and escort Frankenburg away. As Frankenburg is led off, the khan watches the scene with a wide grin, clearly pleased with his actions.
 
 [[Get off the horse.]]]
 &lt;/div&gt;
 
 </tw-passagedata><tw-passagedata pid="79" name="Frankenburg accedes" tags="Khiva" position="6825,675" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[As you and the khan approach the gates, he suddenly turns to you with a grin. “I want to speak to you alone! Your friend can wait elsewhere.” He raises his hand and orders his soldiers to escort Frankenburg to another part of the palace. “No need to worry! He will be well taken care of,” the khan assures you.
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[As you and the khan approach the gates, he suddenly turns to you with a grin. “I want to speak to you alone! Your friend can wait elsewhere.” He raises his hand and orders his soldiers to escort Frankenburg to another part of the palace. “No need to worry! He will be well taken care of,” the khan assures you.
 
 Frankenburg accedes, &quot;Very well.&quot; The khan&#39;s guards come out and escort Frakenburg away from you. As Frakenburg leaves, the khan looks at the scene with big grin on his face.
 
@@ -1097,12 +1246,12 @@ Frankenburg accedes, &quot;Very well.&quot; The khan&#39;s guards come out and e
 &lt;/div&gt;
 
 </tw-passagedata><tw-passagedata pid="80" name="Get off the horse." tags="Khiva" position="6700,1025" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[You dismount your horse carefully, your feet sinking slightly into the dusty ground. Glancing at the khan, you notice he waits with a calm, almost regal patience as a slave kneels beneath him. Only then does the khan step onto the slave’s back to descend gracefully. His lips curl into a self-satisfied grin as he turns to you and says, “Shall we?”
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[You dismount your horse carefully, your feet sinking slightly into the dusty ground. Glancing at the khan, you notice he waits with a calm, almost regal patience as a slave kneels beneath him. Only then does the khan step onto the slave’s back to descend gracefully. His lips curl into a self-satisfied grin as he turns to you and says, “Shall we?”
 
 [[Enter the palace.]]]
 &lt;/div&gt;
 </tw-passagedata><tw-passagedata pid="81" name="Enter the palace." tags="Palace" position="6700,1150" size="100,100">(transition: &quot;dissolve&quot;)+(transition-delay: $EncounterFadeInTime)+(transition-time: $EncounterFadeInTime)[&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[You step into the palace, surprised by what greets you. The interior is not as ostentatious as you had imagined. Instead, it carries the essence of Mesopotamian culture. The vibrant, multicolored walls evoke memories of the Ishtar Gate of Babylon, while the symmetrical architecture showcases a striking mathematical precision. At the heart of the grand hall stands a modest yet inviting table laden with an assortment of delicacies.
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[You step into the palace, surprised by what greets you. The interior is not as ostentatious as you had imagined. Instead, it carries the essence of Mesopotamian culture. The vibrant, multicolored walls evoke memories of the Ishtar Gate of Babylon, while the symmetrical architecture showcases a striking mathematical precision. At the heart of the grand hall stands a modest yet inviting table laden with an assortment of delicacies.
 
 The khan gestures warmly, catching your attention. He guides you to the table with a sweeping motion. “My honored guest! Welcome to my home!” he declares with pride.
 
@@ -1110,7 +1259,7 @@ The khan gestures warmly, catching your attention. He guides you to the table wi
 &lt;/div&gt;
 
 </tw-passagedata><tw-passagedata pid="82" name="Take a seat." tags="Palace" position="6700,1275" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[You make your way to your seat, careful and deliberate. The khan takes his place across from you. Only after he settles into his chair do you sit down. A brief but palpable silence hangs in the air, heavy with unspoken thoughts.
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[You make your way to your seat, careful and deliberate. The khan takes his place across from you. Only after he settles into his chair do you sit down. A brief but palpable silence hangs in the air, heavy with unspoken thoughts.
 
 [[&quot;Thank you for your hospitality, your majesty. I am honored.&quot;]]
 [[Stay silent. ]]]
@@ -1120,7 +1269,7 @@ The khan gestures warmly, catching your attention. He guides you to the table wi
 (set: $C2 to 0)
 (set: $C3 to 0)}
 &lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[The khan’s grin widens at your remarks, a glint of curiosity in his eyes. “You are welcome, my guest! But I must ask… my army outside. What do you think?”
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[The khan’s grin widens at your remarks, a glint of curiosity in his eyes. “You are welcome, my guest! But I must ask… my army outside. What do you think?”
 
 You sense a test in his question. He’s fishing for an opinion, yet you can’t afford to offend him—or appear weak. Before you can carefully craft a response, the khan leans forward, his tone sharp. “Ah! I don’t like waiting. Answer quickly.”
 
@@ -1138,7 +1287,7 @@ You sense a test in his question. He’s fishing for an opinion, yet you can’t
 (set: $C2 to 0)
 (set: $C3 to 0)}
 &lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[The khan breaks the silence with his question, “My army outside. What you think?&quot;
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[The khan breaks the silence with his question, “My army outside. What you think?&quot;
 
 You sense a test in his question. He’s fishing for an opinion, yet you can’t afford to offend him—or appear weak. Before you can carefully craft a response, the khan leans forward, his tone sharp. “Ah! I don’t like waiting. Answer quickly.”
 
@@ -1152,7 +1301,7 @@ You sense a test in his question. He’s fishing for an opinion, yet you can’t
 (click: ?C2)[(set: $C2 to it +1)(goto: &#39;(Truth) &quot;It lacks discipline.&quot;&#39;)]
 (click: ?C3)[(set: $C3 to it +1)(goto: &#39;(Threaten) &quot;It stands no chance against ours.&quot;&#39;)]
 }</tw-passagedata><tw-passagedata pid="85" name="(Flatter) &quot;A magnificent one, your majesty.&quot;" tags="Palace" position="6500,1600" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[The khan bursts into laughter, a sound so loud it reverberates through the room. He slams the table with his hand, causing the plates to clatter. Regaining his composure, he grins at you. “Yes! My army can defeat any force! Even yours!”
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[The khan bursts into laughter, a sound so loud it reverberates through the room. He slams the table with his hand, causing the plates to clatter. Regaining his composure, he grins at you. “Yes! My army can defeat any force! Even yours!”
 
 He picks up a piece of meat from the platter before him and takes a hearty bite. As he chews, his eyes remain fixed on you, gleaming with curiosity. “So… tell me, how big is your country?”
 
@@ -1180,7 +1329,7 @@ It seems like he doesn&#39;t want to give you any chance to eat.
 (goto: &#39;(Threaten) &quot;She cannot be compared to this puny country.&quot;&#39;)
 ]
 }</tw-passagedata><tw-passagedata pid="86" name="(Truth) &quot;It lacks discipline.&quot;" tags="Palace" position="6700,1600" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[The khan narrows his eyes at you, his expression unreadable at first. Then, a faint smile curls his lips. “Ah… you are narrow-minded! But no matter. My army can still crush yours!”
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[The khan narrows his eyes at you, his expression unreadable at first. Then, a faint smile curls his lips. “Ah… you are narrow-minded! But no matter. My army can still crush yours!”
 
 He picks up a piece of meat from the platter before him and takes a hearty bite. As he chews, his eyes remain fixed on you, gleaming with curiosity. “So… tell me, how big is your country?”
 
@@ -1208,7 +1357,7 @@ It seems like he doesn&#39;t want to give you any chance to eat.
 (goto: &#39;(Threaten) &quot;She cannot be compared to this puny country.&quot;&#39;)
 ]
 }</tw-passagedata><tw-passagedata pid="87" name="(Threaten) &quot;It stands no chance against ours.&quot;" tags="Palace" position="6900,1600" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[The khan’s eyes widen in surprise, a flicker of tension crossing his face. His hands ball into fists, resting firmly on the table. His voice drops to a sharp warning. “Careful, Russian... This is my palace.”
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[The khan’s eyes widen in surprise, a flicker of tension crossing his face. His hands ball into fists, resting firmly on the table. His voice drops to a sharp warning. “Careful, Russian... This is my palace.”
 
 He picks up a piece of meat from the platter before him and takes a hearty bite. As he chews, his eyes remain fixed on you, gleaming with curiosity. “So… tell me, how big is your country?”
 
@@ -1236,7 +1385,7 @@ It seems like he doesn&#39;t want to give you any chance to eat.
 (goto: &#39;(Threaten) &quot;She cannot be compared to this puny country.&quot;&#39;)
 ]
 }</tw-passagedata><tw-passagedata pid="88" name="(Flatter) &quot;She is...not very big as yours, your highness.&quot;" tags="Palace" position="6500,1750" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[The khan’s face breaks into a wide smile. “I know! My country is the biggest!”
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[The khan’s face breaks into a wide smile. “I know! My country is the biggest!”
 
 With a casual wave of his hand, a slave steps forward, presenting him with a thick cloth. The khan takes it and wipes his mouth with exaggerated ease, the gesture radiating an air of self-satisfaction.
 
@@ -1267,7 +1416,7 @@ After a brief pause, he leans forward slightly, his tone turning curious yet poi
 (else:)[(goto: &#39;(Threaten) &quot;Enough to destroy any country.&quot;&#39;)]
 ]
 }</tw-passagedata><tw-passagedata pid="89" name="(Truth) &quot;My motherland stretches from Poland to Sibera.&quot;" tags="Palace" position="6700,1750" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[The khan raises an eyebrow, unimpressed. “Poland? Siberia? Are those towns? Towns don&#39;t make your country big.”
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[The khan raises an eyebrow, unimpressed. “Poland? Siberia? Are those towns? Towns don&#39;t make your country big.”
 
 With a dismissive wave of his hand, a slave steps forward, presenting a thick cloth. The khan snatches it and wipes his mouth with deliberate nonchalance, the motion underscoring his disdain.
 
@@ -1298,7 +1447,7 @@ After a brief pause, he leans forward slightly, his tone turning curious yet poi
 (goto: &#39;(Threaten) &quot;Enough to destroy any country.&quot;&#39;)
 ]
 }</tw-passagedata><tw-passagedata pid="90" name="(Threaten) &quot;She cannot be compared to this puny country.&quot;" tags="Palace" position="6900,1750" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[The khan&#39;s face darkens with rage. His voice drops to a dangerous tone as he growls, “Russian… know your place.”
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[The khan&#39;s face darkens with rage. His voice drops to a dangerous tone as he growls, “Russian… know your place.”
 
 With a sharp wave of his hand, a slave steps forward, offering a thick cloth. The khan snatches it, wiping his mouth with slow, deliberate movements, his piercing gaze never leaving you.
 
@@ -1329,7 +1478,7 @@ After a brief pause, he leans forward slightly, his tone turning curious yet poi
 (goto: &#39;(Threaten) &quot;Enough to destroy any country.&quot;&#39;)
 ]
 }</tw-passagedata><tw-passagedata pid="91" name="(Flatter) &quot;She cannot have more than you have, your highness.&quot;" tags="Palace" position="6500,1900" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[“Haha! Yes! I have twenty! Enough to crush any army!”
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[“Haha! Yes! I have twenty! Enough to crush any army!”
 
 The khan lets out a deep sigh, then waves his left hand dismissively. A slave quickly hurries to his side, bowing low. The khan leans in and whispers something into the slave&#39;s ear. Once the khan finishes, the slave silently turns and exits through the back door.
 
@@ -1338,7 +1487,7 @@ With a smile spreading across his face, the khan shifts his focus back to you. �
 [[&quot;Let us enter alliance between us. Russia and Khiva.&quot;]]]
 &lt;/div&gt;
 </tw-passagedata><tw-passagedata pid="92" name="(Truth) &quot;There are too numerous to count, your highness.&quot;" tags="Palace" position="6700,1900" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[The khan tilts his head to the right, a smug look crossing his face. &quot;Not know? I have twenty! You know anything about your country?&quot;
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[The khan tilts his head to the right, a smug look crossing his face. &quot;Not know? I have twenty! You know anything about your country?&quot;
 
 The khan lets out a deep sigh, then waves his left hand dismissively. A slave quickly hurries to his side, bowing low. The khan leans in and whispers something into the slave&#39;s ear. Once the khan finishes, the slave silently turns and exits through the back door.
 
@@ -1346,7 +1495,7 @@ With a smile spreading across his face, the khan shifts his focus back to you. �
 
 [[&quot;Let us enter alliance between us. Russia and Khiva.&quot;]]]
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="93" name="(Threaten) &quot;Enough to destroy any country.&quot;" tags="Palace" position="6900,1900" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[The khan’s face darkens with disappointment. &quot;Not mine.&quot;
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[The khan’s face darkens with disappointment. &quot;Not mine.&quot;
 
 The khan lets out a deep sigh, then waves his left hand dismissively. A slave quickly hurries to his side, bowing low. The khan leans in and whispers something into the slave&#39;s ear. Once the khan finishes, the slave silently turns and exits through the back door.
 
@@ -1354,15 +1503,15 @@ With a smile spreading across his face, the khan shifts his focus back to you. �
 
 [[&quot;Let us enter alliance between us. Russia and Khiva.&quot;]]]
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="94" name="&quot;Let us enter alliance between us. Russia and Khiva.&quot;" tags="Palace" position="6700,2100" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[&quot;Hmm.... What do I get?&quot;
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[&quot;Hmm.... What do I get?&quot;
 
 [[&quot;My motherland will protect you from Turcoman bandits and your rivals.&quot;]]]
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="95" name="&quot;My motherland will protect you from Turcoman bandits and your rivals.&quot;" tags="Palace" position="6700,2225" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[The khan strokes his beard. &quot;In return.... you want?&quot;
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[The khan strokes his beard. &quot;In return.... you want?&quot;
 
 [[&quot;Allow our caravans to pass through Khiva and trade.&quot;]]]
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="96" name="&quot;Allow our caravans to pass through Khiva and trade.&quot;" tags="Palace" position="6700,2350" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[The khan pauses, deep in thought, before suddenly looking up with a broad grin. &quot;Ah! I have my answer!&quot; he exclaims. &quot;With my gifts!&quot;
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[The khan pauses, deep in thought, before suddenly looking up with a broad grin. &quot;Ah! I have my answer!&quot; he exclaims. &quot;With my gifts!&quot;
 
 He snaps his fingers, and slaves begin to emerge from behind a door, positioning themselves behind him. One by one, they circle the table, each carrying a large silver plate covered with cloth.
 
@@ -1370,13 +1519,13 @@ He snaps his fingers, and slaves begin to emerge from behind a door, positioning
 
 [[Unveil the cloth.]]]
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="97" name="Unveil the cloth." tags="Execution" position="6700,2475" size="100,100">(transition: &quot;dissolve&quot;)+(transition-delay: $EncounterFadeInTime)+(transition-time: $EncounterFadeInTime)[&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[A severed head of a Russian girl rests on the silver plate. Horrified, you stagger back, collapsing onto your hips. Before you can react further, Khivan soldiers rush forward, grabbing your arms and dragging you with force toward a dark chamber.
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[A severed head of a Russian girl rests on the silver plate. Horrified, you stagger back, collapsing onto your hips. Before you can react further, Khivan soldiers rush forward, grabbing your arms and dragging you with force toward a dark chamber.
 
 The khan laughs, his voice echoing through the room. But soon, his laughter turns into a snarl of rage. &quot;Stupid Russian!&quot; he spits. &quot;You think I’ll accept your will like a slave? YOU?!&quot;
 
 [[Try to break free.]]]]
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="98" name="Try to break free." tags="Execution" position="6700,2600" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[It&#39;s no use. Guards hold you tight. You can&#39;t move.
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[It&#39;s no use. Guards hold you tight. You can&#39;t move.
 
 The khan approaches, his steps deliberate, and stands face-to-face with you. His eyes burn with contempt. &quot;You come to my land, refuse to bow, and test my patience?&quot; He stands tall, a sinister grin spreading across his face as he pets the severed head on the plate. &quot;Pathetic Russians... I&#39;ve chopped down twenty of them! Now... you&#39;ll be the next.&quot;
 
@@ -1401,7 +1550,7 @@ A Khivan soldier steps forward, unsheathing his scimitar. He raises it high, the
 
 
 </tw-passagedata><tw-passagedata pid="100" name="(Threaten) &quot;We are soldiers of the Imperium. You don&#39;t question Tsar&#39;s order or mine.&quot;" tags="Astrakan" position="1000,1075" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[&quot;If that is your will, I must follow you.&quot; Frankenburg concedes, his tone softer now. &quot;Forgive me for showing weakness, Your Highness. I’ve been consumed by thoughts of the dangers ahead—savage Turcomans, the relentless desert heat, sandstorms, thirst... Perhaps my fear of death drove me to seek excuses.&quot;
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[&quot;If that is your will, I must follow you.&quot; Frankenburg concedes, his tone softer now. &quot;Forgive me for showing weakness, Your Highness. I’ve been consumed by thoughts of the dangers ahead—savage Turcomans, the relentless desert heat, sandstorms, thirst... Perhaps my fear of death drove me to seek excuses.&quot;
 
 With those words, he turns and heads toward the ship. You follow his steps with your gaze, then look up at your flagship, the Imperator Aleksandr. Its 110-gun armament and sturdy oak hull stand as a testament to Russian naval might—an impervious juggernaut ready to carry you into the unknown.
 
@@ -1410,22 +1559,23 @@ With those words, he turns and heads toward the ship. You follow his steps with 
 {
 (click: ?EndEncounter)[(goto: &quot;TravelScreen1&quot;)]
 }</tw-passagedata><tw-passagedata pid="101" name="Frankenburg&#39;s Personal Story" tags="CampFire" position="3150,425" size="100,100">(transition: &quot;dissolve&quot;)+(transition-delay: $EncounterFadeInTime)+(transition-time: $EncounterFadeInTime)[&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[You and Frankenburg sit quietly around the fire. You hear the fire cracking. Quietly, You both stare at the fire as it brings comfort to you. 
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[You and Frankenburg sit quietly around the fire. You hear the fire cracking. Quietly, You both stare at the fire as it brings comfort to you. 
 
-[[&quot;So... how did you become a soldier?&quot;]]]]
+[[&quot;So... how did you become a soldier?&quot;]]]
+]
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="102" name="&quot;So... how did you become a soldier?&quot;" tags="CampFire" position="3150,550" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[Frankenburg looks at you, surprise flickering across his face, as if no one has ever asked him that before. He tosses a wooden stick into the fire, the crackling flames adding weight to his words as he begins to speak.
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[Frankenburg looks at you, surprise flickering across his face, as if no one has ever asked him that before. He tosses a wooden stick into the fire, the crackling flames adding weight to his words as he begins to speak.
 
 “I was just a mere peasant in the town of Kashin. One day, a man came to our farm, dressed in a bright green uniform, his chest adorned with medals. He looked at me and said, ‘You’ve been called to serve as a proud soldier of the motherland. Gather your belongings and follow me.’”
 
 [[&quot;You just joined our army like that?&quot;]]]
 &lt;/div&gt;
 </tw-passagedata><tw-passagedata pid="103" name="&quot;You just joined our army like that?&quot;" tags="CampFire" position="3150,675" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[&quot;I was sick of our farm... Perhaps I needed something new... An excitement perhaps.... The thought of leaving it all behind was so overwhelming that I didn’t even say goodbye to my mother. I just followed the man. And before I knew it, I was fighting the French at Borodino.”
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[&quot;I was sick of our farm... Perhaps I needed something new... An excitement perhaps.... The thought of leaving it all behind was so overwhelming that I didn’t even say goodbye to my mother. I just followed the man. And before I knew it, I was fighting the French at Borodino.”
 
 [[&quot;Don&#39;t you miss your mother?&quot;]]]
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="104" name="&quot;Don&#39;t you miss your mother?&quot;" tags="CampFire" position="3150,800" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[&quot;Of course, Your Highness. I miss her. Ever since I joined the army, I haven&#39;t had the chance to see her... A commoner like me doesn’t have much freedom to visit family. They keep moving me from post to post. If only I’d known that would be the last time I saw her, I would’ve given her a proper hug.” Frankenburg looks back at you, offering a bittersweet smile. “At least I can take comfort in knowing my salary is helping my mother.”
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[&quot;Of course, Your Highness. I miss her. Ever since I joined the army, I haven&#39;t had the chance to see her... A commoner like me doesn’t have much freedom to visit family. They keep moving me from post to post. If only I’d known that would be the last time I saw her, I would’ve given her a proper hug.” Frankenburg looks back at you, offering a bittersweet smile. “At least I can take comfort in knowing my salary is helping my mother.”
 
 An awkward silence lingers between you. Frankenburg breaks it, speaking first. &quot;It’s getting late, Your Highness. I’ll take the first watch. I’ll wake you in two hours.&quot;
 
@@ -1439,7 +1589,7 @@ You adjust your bedroll carefully and lie down.
     (goto: &quot;TravelScreen6&quot;)
     ]
 }</tw-passagedata><tw-passagedata pid="105" name="Frankenburg giving water" tags="ExtremeHeat" position="4800,400" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[Frankenburg stumbles toward you, his lips as dry and cracked as your own. He pulls out his water bag and offers it to you. &quot;Your... Highness... It&#39;s not much, but please, take mine.&quot;
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[Frankenburg stumbles toward you, his lips as dry and cracked as your own. He pulls out his water bag and offers it to you. &quot;Your... Highness... It&#39;s not much, but please, take mine.&quot;
 
 You don&#39;t understand why he’s willing to sacrifice his water for you, but in that moment, you desperately seize it, drinking deeply to quench your thirst. Frankenburg watches you with an expression of relief, his own exhaustion mirrored in his eyes.
 
@@ -1451,7 +1601,7 @@ You don&#39;t understand why he’s willing to sacrifice his water for you, but 
     (goto: &quot;TravelScreen9&quot;)
     ]
 }</tw-passagedata><tw-passagedata pid="106" name="Frankenburg taking your water" tags="ExtremeHeat" position="4800,550" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[Frankenburg approaches you, his lips dry and cracked, mirroring your own condition. Without warning, he draws his knife and points it toward you. &quot;Your... Highness... Give me your water. If you do, there won’t be any bloodshed. I promise.&quot;
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[Frankenburg approaches you, his lips dry and cracked, mirroring your own condition. Without warning, he draws his knife and points it toward you. &quot;Your... Highness... Give me your water. If you do, there won’t be any bloodshed. I promise.&quot;
 
 With a heavy heart, you hand over your water. Frankenburg grabs it desperately, drinking it down in hurried gulps. You watch helplessly, feeling the weight of your only means of survival slip away into his hands.
 
@@ -1476,7 +1626,7 @@ With a heavy heart, you hand over your water. Frankenburg grabs it desperately, 
 (transition: &quot;dissolve&quot;)+(transition-delay: 4s)+(transition-time: 2s)[Russian envoy to Khiva]
 (transition: &quot;dissolve&quot;)+(transition-delay: 6s)+(transition-time: 2s)[Astrakhan, Russia]
 
-(transition: &quot;dissolve&quot;)+(transition-delay: 9s)|GameStart&gt;[Enter the port]
+(text-color: white)+(hover-style: (text-color: red))+(transition: &quot;dissolve&quot;)+(transition-delay: 9s)|GameStart&gt;[Enter the port]
 {(after: 9s)[(click: ?GameStart)[(goto: &quot;Begin your mission&quot;)]]}
 </tw-passagedata><tw-passagedata pid="108" name="British Intro" tags="Intro" position="7225,75" size="100,100">(align:&quot;=&gt;&lt;=&quot;)+(box:&quot;=XXXXXXXX=&quot;)[
 
@@ -1499,36 +1649,36 @@ With a heavy heart, you hand over your water. Frankenburg grabs it desperately, 
 
 
 </tw-passagedata><tw-passagedata pid="109" name="British Office" tags="BritishOffice" position="7225,200" size="100,100">(transition: &quot;dissolve&quot;)+(transition-delay: $EncounterFadeInTime)+(transition-time: $EncounterFadeInTime)[&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[You knock on the wooden door in front of you. A voice from within responds, “Come in.” You open the door and step into Major d&#39;Arcy Todd&#39;s office.
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[You knock on the wooden door in front of you. A voice from within responds, “Come in.” You open the door and step into Major d&#39;Arcy Todd&#39;s office.
 
 After closing the door quietly behind you, you take three steps forward and salute. Major d&#39;Arcy Todd returns the gesture with a sharp salute of his own. “At ease,” he says, and only then do you drop your salute.
 
 [[&quot;Sir, Captain James Potter reports as ordered.&quot;]]]]
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="110" name="&quot;Sir, Captain James Potter reports as ordered.&quot;" tags="BritishOffice" position="7225,325" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[The Major is focused on a document, his fountain pen gliding across the paper. After signing his initials, he carefully sets the pen down. He folds the paper with precision, pours hot wax on the crease, and seals it with a rubber stamp. Leaning back in his chair, his brow furrows with concern.
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[The Major is focused on a document, his fountain pen gliding across the paper. After signing his initials, he carefully sets the pen down. He folds the paper with precision, pours hot wax on the crease, and seals it with a rubber stamp. Leaning back in his chair, his brow furrows with concern.
 
 “Captain Potter, I know you’re here on short notice, but we are facing a crisis,” he begins, his voice steady but heavy with urgency. “Yesterday, we received an intelligence from Khiva. Russia is mobilizing an army of 100,000 in Orenburg with plans to invade Khiva.”
 
 [[&quot;Any reason for their aggression, sir?&quot;]]]
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="111" name="&quot;Any reason for their aggression, sir?&quot;" tags="BritishOffice" position="7225,450" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[
 The Major rises from his desk and walks over to the massive map of Central Asia that spans the wall behind him. He runs a hand over the top, as if measuring the weight of the situation.
 
 “For over a century, Central Asia and India have been the Crown Jewel of our Empire,” he says, his voice filled with quiet gravity. “Our economic prosperity has been built on the dominance we hold in this region. But now… the Russians are threatening that. They plan to seize Khiva by force, disrupting our markets. And there’s a real chance they’re eyeing India as their next conquest.”
 
 [[&quot;Why can&#39;t London send an official complaint?&quot;]]]
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="112" name="&quot;Why can&#39;t London send an official complaint?&quot;" tags="BritishOffice" position="7225,575" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[The Major grabs the document and walks toward you, his expression somber. “Unfortunately, the Russians have a justification that we cannot easily refute. They claim they’re liberating Russian slaves in Khiva. They&#39;ve even admitted, without shame, that they plan to install a puppet government there to ensure the safety of their people.”
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[The Major grabs the document and walks toward you, his expression somber. “Unfortunately, the Russians have a justification that we cannot easily refute. They claim they’re liberating Russian slaves in Khiva. They&#39;ve even admitted, without shame, that they plan to install a puppet government there to ensure the safety of their people.”
 
 He lets out a heavy sigh and looks at you, the weight of the situation evident in his eyes. “As you know, we forcibly brought Herat into our fold. So we are in no position to question their morality. We cannot prevent this by simply telling them no.&quot;
 
 [[&quot;So... What do we do, sir?&quot;]]]
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="113" name="&quot;So... What do we do, sir?&quot;" tags="BritishOffice" position="7225,700" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[The Major hands you the paper with a grave expression. “There is one way. Your mission is to free those Russian slaves kept in Khiva before the Russian army arrives. You must convince the Khan of Khiva to free them. Not only that, you have to escort them to the nearest Russian outpost and deliver them back to Russian lands. Only then, the Russians will no longer have any justification to take Khiva.”
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[The Major hands you the paper with a grave expression. “There is one way. Your mission is to free those Russian slaves kept in Khiva before the Russian army arrives. You must convince the Khan of Khiva to free them. Not only that, you have to escort them to the nearest Russian outpost and deliver them back to Russian lands. Only then, the Russians will no longer have any justification to take Khiva.”
 
 [[Grab the order.]]]
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="114" name="Grab the order." tags="BritishOffice" position="7225,825" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
-(align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[As you take the paper, Major places a hand on your shoulder. “We cannot lose India. It&#39;s too damn important. The fate of our Empire is on your shoulders. Good luck Captain.”
+(align:&quot;&lt;==&quot;)+(box:$BoxWidth)[As you take the paper, Major places a hand on your shoulder. “We cannot lose India. It&#39;s too damn important. The fate of our Empire is on your shoulders. Good luck Captain.”
 
 You nod, accepting the weight of his words. After a brief moment, you salute. The Major returns the gesture, his expression a mix of determination and concern.
 
@@ -1539,7 +1689,7 @@ The Great Game has just begun.]</tw-passagedata><tw-passagedata pid="115" name="
 
 
 
-|Traveling&gt;[Traveling(t8n: &quot;instant&quot;)+(t8n-delay: 1s)[.](t8n: &quot;instant&quot;)+(t8n-delay: 2s)[.](t8n: &quot;instant&quot;)+(t8n-delay: 3s)[.]]
+|Traveling&gt;[Sailing(t8n: &quot;instant&quot;)+(t8n-delay: 1s)[.](t8n: &quot;instant&quot;)+(t8n-delay: 2s)[.](t8n: &quot;instant&quot;)+(t8n-delay: 3s)[.]]
 (live: 4s)[(rerun: ?Traveling)]
 (transition: &quot;dissolve&quot;)+(transition-delay: 9s)[|NextLocation&gt;[Enter Krasnovodsk]]]
 {(after: 9s)[(click: ?NextLocation)[(goto: &quot;Board the ship. Set sail for Krasnovodsk&quot;)]]}</tw-passagedata><tw-passagedata pid="116" name="TravelScreen2" tags="Intro" position="1500,600" size="100,100">(align:&quot;=&gt;&lt;=&quot;)+(box:&quot;=XXX=&quot;)[
@@ -1581,11 +1731,11 @@ The Great Game has just begun.]</tw-passagedata><tw-passagedata pid="115" name="
 
 |Traveling&gt;[Making camp(t8n: &quot;instant&quot;)+(t8n-delay: 1s)[.](t8n: &quot;instant&quot;)+(t8n-delay: 2s)[.](t8n: &quot;instant&quot;)+(t8n-delay: 3s)[.]]
 (live: 4s)[(rerun: ?Traveling)]
-(transition: &quot;dissolve&quot;)+(transition-delay: 9s)[|NextLocation&gt;[Sit by the fire]]]
+(transition: &quot;dissolve&quot;)+(transition-delay: 9s)[|NextLocation&gt;[Continue on...]]]
 {
 (after: 9s)[(click: ?NextLocation)[
-	(if: $TrustPoint &lt;= -2)[(goto: &quot;Start camp&quot;)]
-    (else-if: $TrustPoint &gt;= 2)[(goto: &quot;Frankenburg&#39;s Personal Story&quot;)]
+	(if: $TrustPoint &lt;= -1)[(goto: &quot;Start camp&quot;)]
+    (else-if: $TrustPoint &gt;= 0)[(goto: &quot;Frankenburg&#39;s Personal Story&quot;)]
     (else: )[(goto: &quot;The dawn breaks...&quot;)]
     ]]
 }</tw-passagedata><tw-passagedata pid="120" name="TravelScreen6" tags="Intro" position="3250,900" size="100,100">(align:&quot;=&gt;&lt;=&quot;)+(box:&quot;=XXXXXXXX=&quot;)[
@@ -1641,7 +1791,7 @@ The Great Game has just begun.]</tw-passagedata><tw-passagedata pid="115" name="
 {
 (after: 9s)[(click: ?NextLocation)[
 	(if: $Water &lt;= 0)[(goto: &quot;WaterDepleted&quot;)]
-    (else:)[(goto: &quot;Continue on...  &quot;)]
+    (else:)[(goto: &quot;Keep walking...  &quot;)]
     ]
 ]
 }</tw-passagedata><tw-passagedata pid="125" name="TravelScreen11" tags="Intro" position="5650,550" size="100,100">(align:&quot;=&gt;&lt;=&quot;)+(box:&quot;=XXXXXXXX=&quot;)[
@@ -1675,7 +1825,10 @@ The Great Game has just begun.]</tw-passagedata><tw-passagedata pid="115" name="
 	(if: $Water &lt;= 0)[(goto: &quot;WaterDepleted&quot;)]
     (else:)[(goto: &quot;Have to keep moving...&quot;)]]
 ]
-}</tw-passagedata><tw-passagedata pid="127" name="Test" tags="" position="250,675" size="100,100"></tw-passagedata><tw-passagedata pid="128" name="GameOver" tags="Intro" position="250,550" size="100,100">(align:&quot;=&gt;&lt;=&quot;)+(box:&quot;=XXXXXXXX=&quot;)[
+}</tw-passagedata><tw-passagedata pid="127" name="Save" tags="header" position="250,25" size="100,100">{
+(if: (passage:)&#39;s tags does not contain &quot;Intro&quot; and (passage:)&#39;s tags does not contain &quot;MainMenu&quot;)[(save-game: &quot;Resume&quot;)]
+}
+</tw-passagedata><tw-passagedata pid="128" name="GameOver" tags="Intro" position="250,550" size="100,100">(align:&quot;=&gt;&lt;=&quot;)+(box:&quot;=XXXXXXXX=&quot;)[
 
 
 
@@ -1685,7 +1838,7 @@ The Great Game has just begun.]</tw-passagedata><tw-passagedata pid="115" name="
 (transition: &quot;dissolve&quot;)+(transition-delay: 2s)+(transition-time: 2s)[Game Over]
 
 (transition: &quot;dissolve&quot;)+(transition-delay: 4s)+(transition-time: 2s)[|ToMainMenu&gt;[Retry]]]
-{(after: 4s)[(click: ?ToMainMenu)[(goto: &quot;Data&quot;)]]}</tw-passagedata><tw-passagedata pid="129" name="WaterDepleted" tags="ThirstyTurk" position="250,300" size="100,100">(transition: &quot;dissolve&quot;)+(transition-delay: $EncounterFadeInTime)+(transition-time: $EncounterFadeInTime)[&lt;div id=&quot;TextBox&quot;&gt;
+{(after: 4s)[(click: ?ToMainMenu)[(print: &quot;&lt;script&gt;window.clearSavedGames();&lt;/script&gt;&quot;)(goto: &quot;Main Menu&quot;)]]}</tw-passagedata><tw-passagedata pid="129" name="WaterDepleted" tags="ThirstyTurk" position="250,300" size="100,100">(transition: &quot;dissolve&quot;)+(transition-delay: $EncounterFadeInTime)+(transition-time: $EncounterFadeInTime)[&lt;div id=&quot;TextBox&quot;&gt;
 (align:&quot;&lt;==&quot;)+(box:&quot;=XX=&quot;)[Your water supply ran out. There is no more hope. No more energy to continue. You collapse on your sand with your dried mouth.
 
 |GameOver&gt;[Game over]]]
@@ -1699,7 +1852,11 @@ The Great Game has just begun.]</tw-passagedata><tw-passagedata pid="115" name="
 &lt;/div&gt;
 {
 (click: ?GameOver)[(goto: &quot;GameOver&quot;)]
-}</tw-passagedata></tw-storydata>
+}</tw-passagedata><tw-passagedata pid="131" name="Untitled Passage" tags="" position="75,300" size="100,100">&lt;button onclick = &quot;window.clearSavedGames()&quot;&gt;</tw-passagedata><tw-passagedata pid="132" name="Untitled Passage 1" tags="CampFire" position="75,150" size="100,100">&lt;div id=&quot;TextBox&quot;&gt;
+(align:&quot;&lt;==&quot;)+(box:&quot;=XXXXXXXXXXXXXXXXXX=&quot;)[You and Frankenburg sit quietly around the fire. You hear the fire cracking. Quietly, You both stare at the fire as it brings comfort to you.
+
+[[&quot;So... how did you become a soldier?&quot;]]]
+&lt;/div&gt;</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
